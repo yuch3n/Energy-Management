@@ -6,7 +6,7 @@ EnegeryManagement::Application.routes.draw do
 
   resources :admin, :only => [:index]
   resources :tips, :only => [:index]
-  resources :feedback, :only => [:feedback]
+  resources :feedback, :only => [:index]
 
   namespace :admin do
     resources :tips
