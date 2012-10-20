@@ -1,27 +1,10 @@
 <div data-role="header" data-position="fixed" data-theme="b">
   <a href="#" data-role="button" data-rel="back" data-theme="a">Back</a>
-  <h1>Green Energy Tips</h1>
+  <h1>Submit Feedback!</h1>
 </div>
 
 <div data-role="content">
-
-  <% @categories.each do |category, tips| %>
-    <div data-role="collapsible" data-theme="b" data-content-theme="c">
-      <h3 class="Category_<%= category %>"><%=category%></h3>
-      <ul data-role="listview" data-theme="c" data-inset="true">
-	  <% @subcats = tips.group_by(&:title) %>
-  
-	  <% @subcats.each do |subcat, tips| %>
-	    <li>
-			<h3><%=subcat%></h3>	
-			<% tips.each do |tip| %>
-				<p><%=raw tip.content%></p>
-			<% end %>
-		</li>
-	  <% end %>
-      </ul>
-    </div>
-  <% end %>
+  We appreciate all feedback on our mobile application! Please let us know what we can do to improve.
 
 </div>
 
