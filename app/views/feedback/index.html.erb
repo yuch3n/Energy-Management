@@ -1,14 +1,12 @@
 <style>
 	#message{
-		height: 15em;
-		width: 100%;
+		height: 12em;
+		width: 99.4%;
+	}
+	#feedback-widget{
+		display: none;
 	}
 </style>
-<script type="text/javascript">
- $(document).ready(function() {
-   $("#feedback-widget").css("display", "none");
- });
-</script>
 <div id="feedback-form">
 		<%= form_tag "emailer/submit_feedback" do -%>
 			<h2>Please enter your feedback:</h2>
