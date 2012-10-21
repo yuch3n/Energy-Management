@@ -8,9 +8,45 @@
   <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
   <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1" />
+  <style>
+	.rotate {
+
+		/* Safari */
+		-webkit-transform: rotate(-90deg);
+
+		/* Firefox */
+		-moz-transform: rotate(-90deg);
+
+		/* IE */
+		-ms-transform: rotate(-90deg);
+
+		/* Opera */
+		-o-transform: rotate(-90deg);
+
+		/* Internet Explorer */
+		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	}
+	#feedback-widget{
+		position: fixed;
+		top: 50%;
+		right:-34px;
+		background-color: #008B00;
+		color:#FFFFFF;
+		padding: 10px;
+		-webkit-border-top-left-radius: 10px;
+		-webkit-border-top-right-radius: 10px;
+		-moz-border-radius-topleft: 10px;
+		-moz-border-radius-topright: 10px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+  </style>
 </head>
 <body>
-
+<div class="rotate" id="feedback-widget"> FEEDBACK </div>
+<%= form_tag :controller => "feedback", :action => "submit_feedback" do %>
+<%= submit_tag 'Submit' %>
+<% end -%>
 <%= yield %>
 
 </body>
