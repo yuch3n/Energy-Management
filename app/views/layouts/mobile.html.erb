@@ -53,8 +53,8 @@
 	#feedback-form{
 		display: none;
 		position: fixed;
+		right: 40px;
 		top: 30%;
-		left: 38%;
 		z-index: 999;
 		padding: 50px;
 		background-color: #F8F8FF;
@@ -64,31 +64,36 @@
 		border-color: #2F4F4F;
 	}
 	#message{
-		height: 15em;
-		width: 20em;
+		margin-top: 1em;
+		height: 10em;
+		width: 15em;
 		margin-bottom: 2em;
 	}
-	#feedback-exit{
-		cursor: pointer;
-		background-image:url(<%=asset_path "exit_button.png"%>);
-
-		float:right;
-		height: 30px;
-		width: 30px;
+	#canel-button{
+		width: 10%;
+		float: left;
 	}
+	#submit-button{
+		width: 10%;
+		float: right;
+	}
+	#content {padding-left: 30px; padding-right: 30px;}
   </style>
 </head>
 <body>
 <div class="rotate" id="feedback-widget" onClick="displayFeedbackForm();"> FEEDBACK </div>
 	<div id="feedback-form">
-		<div id="feedback-exit" onClick="hideFeedbackForm();"></div>
 		<%= form_tag "emailer/submit_feedback" do -%>
 			Please enter your feedback:
 			<%= text_area_tag 'message' %>
+			<%= hidden_field_tag 'return_to', request.url %>
+			<button id="cancel-button" type="button" value="Cancel" onClick="hideFeedbackForm();" >Cancel </button>
 			<%= submit_tag 'Submit' %>
 		<% end -%>
 	</div>
+<div id="content">
 <%= yield %>
+</div>
 
 </body>
 </html>
