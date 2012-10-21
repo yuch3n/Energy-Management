@@ -1,0 +1,19 @@
+<style>
+	#message{
+		height: 15em;
+		width: 100%;
+	}
+</style>
+<script type="text/javascript">
+ $(document).ready(function() {
+   $("#feedback-widget").css("display", "none");
+ });
+</script>
+<div id="feedback-form">
+		<%= form_tag "emailer/submit_feedback" do -%>
+			<h2>Please enter your feedback:</h2>
+			<%= text_area_tag 'message'%>
+			<button id="cancel-button" type="button" value="Cancel" onClick="history.back();" >Cancel</button>
+			<%= submit_tag 'Submit' %>
+	<% end -%>
+</div>

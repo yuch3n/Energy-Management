@@ -11,6 +11,6 @@ class EmailerController < ApplicationController
       message = params[:message]
     Emailer.contact(recipient, subject, message).deliver
     flash[:notice] = "Feedback has been submitted."
-    redirect_to (params[:return_to])
+    redirect_to "/"
   end
 end

@@ -40,4 +40,8 @@ module NavigationHelpers
   end
 end
 
+def feedback_path(parameters)
+  "/feedback?#{parameters}"
+end
+
 World(NavigationHelpers)

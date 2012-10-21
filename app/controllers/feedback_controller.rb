@@ -1,6 +1,5 @@
 class FeedbackController < ApplicationController
-  layout 'mobile'
-
-  def submit_feedback
+	layout 'mobile'
+  def index
   end
 end
