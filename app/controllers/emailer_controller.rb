@@ -10,7 +10,7 @@ class EmailerController < ApplicationController
       subject = 'myPower Feedback'
       message = params[:message]
       flash[:notice] = "Submission failed: empty form"
-      if message != ""
+      if not message.empty? 
         Emailer.contact(recipient, subject, message).deliver
         flash[:notice] = "Successfully sent"
       end
