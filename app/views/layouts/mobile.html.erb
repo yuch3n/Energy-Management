@@ -43,9 +43,11 @@
 		text-decoration: none;
 	}
 	#content {padding-left: 30px; padding-right: 30px;}
+	#flash-notice {text-align: center; background-color: yellow;}
   </style>
 </head>
 <body>
+<div id="flash-notice"><%= flash[:notice] %></div>
 <a class="rotate" id="feedback-widget" href="/feedback"> FEEDBACK </a>
 <div id="content">
 <%= yield %>
