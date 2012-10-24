@@ -3,7 +3,7 @@ class Admin::BuildingsController < ApplicationController
   layout 'admin'
 
   def index
-    @buildings = Hall.all
+    @tips = Tip.all
   end
 
   def show
