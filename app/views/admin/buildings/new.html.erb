@@ -1,0 +1,18 @@
+<%= form_tag admin_tips_path, :method => 'post' do %>
+  <%= label_tag :name, 'Name' %>
+  <%= text_field :building_name, 'name' %>
+  
+  <br/>
+
+  <%= submit_tag 'Create Building', :class => 'btn btn-success' %>
+<% end %>
+
+<script type="text/javascript" src="/assets/jquery.wysiwyg.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $('#editor').wysiwyg({
+      initialContent: '',
+      css: '/assets/admin/bootstrap.css'
+    });
+  });
+</script>
