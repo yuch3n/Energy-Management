@@ -33,7 +33,7 @@ class Hall < ActiveRecord::Base
 
   def getquery(starttime, endtime)
     streamlimit = 1000
-    "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where Metadata/Extra/System = 'electric'  and ((Properties/UnitofMeasure = 'kW' or Properties/UnitofMeasure = 'Watts') or Properties/UnitofMeasure = 'W') and Metadata/Location/Building = '#{self.name}' and not Metadata/Extra/Operator like 'sum%'"
+    "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where uuid = '#{self.streamid}' and ((Properties/UnitofMeasure = 'kW' or Properties/UnitofMeasure = 'Watts') or Properties/UnitofMeasure = 'W') and Metadata/Location/Building = '#{self.name}' and not Metadata/Extra/Operator like 'sum%'"
   end
 
   def getendtime interval

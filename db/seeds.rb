@@ -14,45 +14,46 @@ green_departments = GreenFeature.create(:id => 5,
                                         :full_name => "Green Departments",
                                         :content => "UC Berkeley Green Department certification recognizes campus  departments that have taken extra steps to be more sustainable. The  program identifies a set of conditions and actions - including energy, waste, transportation, and purchasing - that can be followed in order to be certified. The certification  process is designed to provide resources, guidance, and recognition to faculty,  staff, and students as they take steps to decrease their environmental impacts  at work.")
 
+Art_Museum = Hall.create(:name=>"Art Museum", :streamid=> "7ed3f5a4-a059-5a22-a3a9-4e43ad6cc530")
+Bechtel_Center = Hall.create(:name=>"Bechtel Center", :streamid=>"a810d10f-b82e-5d38-b460-65c624d45dd5")
+Birge_Hall = Hall.create(:name=>"Birge Hall", :streamid=>"18866fbe-53ff-5511-86c7-95d1cea0a061")
+Cali_Hall = Hall.create(:name=>"California Hall", :streamid=>"353dc15d-8afb-555c-b9a7-db6aede74519")
 
 # Hall.create(:name=>"Campbell Hall")
 # Hall.create(:name=>"Central Dine")
 # Hall.create(:name=>"Chan-Bowditch")
-Chavez_Center = Hall.create(:name=>"Chavez Center")
+Chavez_Center = Hall.create(:name=>"Chavez Center", :streamid=>"e9783cd3-de8d-5237-95d8-427bada00f86")
 Chavez_Center.green_features = [power, climate]
 
-Cory_Hall = Hall.create(:name=>"Cory Hall")
+Cory_Hall = Hall.create(:name=>"Cory Hall New (as of 1/12/12)", :streamid=>"8737f287-14df-5ccd-82df-e66ca7374b63")
 Cory_Hall.green_features = [power, strategic, climate]
 
 # Hall.create(:name=>"Davis Hall")
 # Hall.create(:name=>"Doe Addition")
-Hall.create(:name=>"Doe Annex")
 
-Doe = Hall.create(:name=>"Doe Library")
+Doe = Hall.create(:name=>"Doe Library", :streamid=>"5d4a844b-9e14-5134-9cd6-ec3fa18875d0")
 Doe.green_features = [climate, power]
 
-Donner = Hall.create(:name=>"Donner Laboratory")
+Donner = Hall.create(:name=>"Donner Laboratory", :streamid=>"888da9eb-5b39-5636-b495-94c1d1b57f35")
 Donner.green_features = [power, climate]
 
 # Hall.create(:name=>"Durant")
 # Hall.create(:name=>"Dwinelle Annx")
-Dwinelle = Hall.create(:name=>"Dwinelle Hall")
+Dwinelle = Hall.create(:name=>"Dwinelle Hall", :streamid=>"1cc28c39-e855-5087-bb28-864e03c07520")
 Dwinelle.green_features = [power, strategic, climate]
 
-East = Hall.create(:name=>"East Asian Library")
+East = Hall.create(:name=>"East Asian Library", :streamid=>"1054f76a-3104-5843-aea9-b6db787d3df4")
 East.green_features = [power, climate]
 
 # Hall.create(:name=>"Edwards Track")
 # Hall.create(:name=>"Eshleman Hall")
-Etch = Hall.create(:name=>"Etcheverry Hall")
-Etch.green_features = [power, climate]
 
 # Hall.create(:name=>"Evans Field")
-Evans = Hall.create(:name=>"Evans Hall")
+Evans = Hall.create(:name=>"Evans Hall", :streamid=>"3d06be44-4b42-5a7c-8a09-305c2d7894df")
 Evans.green_features = [strategic, power, climate]
 
 # Hall.create(:name=>"Foothill Dorms")
-Gardner = Hall.create(:name=>"Gardner Stacks")
+Gardner = Hall.create(:name=>"Gardner Stacks", :streamid=>"a8bec5d1-dced-5a05-a938-41f618a92ac0")
 Gardner.green_features = [climate, power]
 
 # Hall.create(:name=>"Giannini")
@@ -65,74 +66,74 @@ Gardner.green_features = [climate, power]
 # Hall.create(:name=>"Greek Theatre")
 # Hall.create(:name=>"Haas Business")
 # Hall.create(:name=>"Haas Clbhouse")
-Haas = Hall.create(:name=>"Haas Pavilion")
+Haas = Hall.create(:name=>"Haas Pavilion", :streamid=>"fc5b1026-b596-5e1d-803e-8a1cbf5fa17a")
 Haas.green_features = [climate, strategic]
 
-Haas = Hall.create(:name=>"Haas School of Business")
+Haas = Hall.create(:name=>"Haas School of Business", :streamid=>"420a221d-3bec-5ff2-a1e7-838fc77dc4e9")
 Haas.green_features = [climate, strategic, power]
 
 # Hall.create(:name=>"Haas Trailers")
-Hargrove = Hall.create(:name=>"Hargrove Library")
+Hargrove = Hall.create(:name=>"Hargrove Library", :streamid=>"2782a39b-8b3f-52cc-8870-c5feb120aef0")
 Hargrove.green_features = [power, climate]
 
 # Hall.create(:name=>"Harmon Gym")
 # Hall.create(:name=>"Haviland")
 # Hall.create(:name=>"Haviland Hall")
 # Hall.create(:name=>"Hearst Annex")
-Hearst = Hall.create(:name=>"Hearst Gym")
+Hearst = Hall.create(:name=>"Hearst Gym", :streamid=>"f20a9df7-a1be-5170-9bb5-5132efb85585")
 Hearst.green_features = [climate, power]
 
-Mining = Hall.create(:name=>"Hearst Mining Building")
+Mining = Hall.create(:name=>"Hearst Mining Building", :streamid=>"eba1c414-d866-583a-a0ec-c588918f21b2")
 Mining.green_features = [power, climate]
 
 # Hall.create(:name=>"Heating Plant")
 # Hall.create(:name=>"Hertz Hall")
 # Hall.create(:name=>"Hesse")
 # Hall.create(:name=>"Hesse Annex")
-Hilde = Hall.create(:name=>"Hildebrand Hall")
+Hilde = Hall.create(:name=>"Hildebrand Hall", :streamid=>"fbcba13f-3751-5c1e-b103-e051142f84cc")
 Hilde.green_features = [climate, strategic, power]
 
-Hilgrad = Hall.create(:name=>"Hilgard Hall")
+Hilgrad = Hall.create(:name=>"Hilgard Hall", :streamid=>"a6e40b57-0043-53a2-bae1-939e610e895d")
 Hilgrad.green_features = [climate, strategic, power]
 
-#Hall.create(:name=>"King Union Bldg")
+King = Hall.create(:name=>"King Union Bldg", :streamid=>"4493ebc8-b410-5f47-a499-7d8c449b1057")
 # Hall.create(:name=>"Kleeburger")
-#Hall.create(:name=>"Koshland")
-Krober = Hall.create(:name=>"Kroeber Hall")
+Kosh = Hall.create(:name=>"Koshland New (as of 3/9/11)", :streamid=>"f2d3030e-3140-5a35-acbe-8060b10af20d")
+Krober = Hall.create(:name=>"Kroeber Hall", :streamid=>"6fc5ad2b-c398-5556-ae1e-35549882801b")
 Krober.green_features = [climate, power]
 
-Latimer = Hall.create(:name=>"Latimer Hall")
+Latimer = Hall.create(:name=>"Latimer Hall", :streamid=>"ce79615c-af95-51e6-aeeb-2037ba63dae7")
 Latimer.green_features = [power, climate, strategic]
 
 # Hall.create(:name=>"LAW")
-Hall.create(:name=>"Law and Simon Hall")
-Hall.create(:name=>"Lawrence Hall of Science")
+LSH = Hall.create(:name=>"Law and Simon Hall", :streamid=>"3ef2c709-fa57-5682-880a-99cab9663c6b")
+LHS = Hall.create(:name=>"Lawrence Hall of Science", :streamid=>"fa3846ca-c6ad-5b87-9520-efb9ef07e2bd")
 # Hall.create(:name=>"LBL")
 # Hall.create(:name=>"Leconte Hall")
-LeCunt = Hall.create(:name=>"Le Conte Hall")
+LeCunt = Hall.create(:name=>"Le Conte Hall", :streamid=>"f9e52e06-697a-57af-9566-d05fabb001a4")
 LeCunt.green_features = [strategic, climate, power]
 
-#Hall.create(:name=>"Lewis")
+Hall.create(:name=>"Lewis Hall", :streamid=>"493694ba-0757-5308-8da8-cad28450bcaf")
 #Hall.create(:name=>"Life Science")
-LSA = Hall.create(:name=>"LSA")
+LSA = Hall.create(:name=>"LSA New (as of 7/22/10)", :streamid=>"fa5613fb-d632-5518-a34f-0632bd34fc49")
 LSA.green_features = [power, climate, strategic]
 
 # Hall.create(:name=>"LSB")
-McCone = Hall.create(:name=>"McCone")
+McCone = Hall.create(:name=>"McCone", :streamid=>"af48e91d-ec2c-551f-9f5f-90adcddb966a")
 McCone.green_features = [strategic, power, climate]
 
 # Hall.create(:name=>"Memorial Std")
 # Hall.create(:name=>"Mens Fac Club")
-Minor = Hall.create(:name=>"Minor Addition")
+Minor = Hall.create(:name=>"Minor Addition", :streamid=>"2c241bb1-f918-56de-85b7-e5931466dd27")
 Minor.green_features = [strategic, climate, power]
 
 # Hall.create(:name=>"Moffitt")
-Morgan = Hall.create(:name=>"Morgan Hall")
+Morgan = Hall.create(:name=>"Morgan Hall", :streamid=>"826228a6-1737-51c2-a16a-5d95206d368c")
 Morgan.green_features = [strategic, climate, green_buildings, power]
 
 # Hall.create(:name=>"Morrison")
 # Hall.create(:name=>"Moses")
-Mulford = Hall.create(:name=>"Mulford Hall")
+Mulford = Hall.create(:name=>"Mulford Hall", :streamid=>"43d75052-5ccb-50b9-b9f9-78e1c84cec79")
 Mulford.green_features = [green_departments, climate, power]
 
 # Hall.create(:name=>"Music Library")
@@ -141,8 +142,8 @@ Mulford.green_features = [green_departments, climate, power]
 # Hall.create(:name=>"Northwest Animal Facility")
 # Hall.create(:name=>"Nw Animal")
 # Hall.create(:name=>"Obrien")
-Ox = Hall.create(:name=>"Oxford Tract")
-Ox.green_features = [power, climate]
+#Ox = Hall.create(:name=>"Oxford Tract")
+#Ox.green_features = [power, climate]
 
 # Hall.create(:name=>"Parking A")
 # Hall.create(:name=>"Parking B")
@@ -150,8 +151,8 @@ Ox.green_features = [power, climate]
 # Hall.create(:name=>"Parking D")
 # Hall.create(:name=>"Parking H")
 # Hall.create(:name=>"Parking Stdm")
-RSF = Hall.create(:name=>"Rec Sports Facility")
-RSF.green_features = [power, climate, strategic]
+#RSF = Hall.create(:name=>"Rec Sports Facility")
+#RSF.green_features = [power, climate, strategic]
 
 #Hall.create(:name=>"Rec Sport Sub")
 #Hall.create(:name=>"Res Hall I")
@@ -166,43 +167,44 @@ RSF.green_features = [power, climate, strategic]
 #Hall.create(:name=>"Rugby Fld Hse")
 #Hall.create(:name=>"Services")
 #Hall.create(:name=>"Simon")
-Soda = Hall.create(:name=>"Soda Hall")
+Soda = Hall.create(:name=>"Soda Hall New (as of 1/12/12)", :streamid=>"bc3a93bc-9bdd-5c59-aa6e-63f7060b9d58")
 Soda.green_features = [power, climate, strategic]
 
 #Hall.create(:name=>"South")
 #Hall.create(:name=>"Sproul")
 #Hall.create(:name=>"Stanley")
 #Hall.create(:name=>"Std Press Box")
-St = Hall.create(:name=>"Stephens Hall")
+St = Hall.create(:name=>"Stephens Hall", :streamid=>"93140bf2-7574-5065-a647-7afd1144ee9a")
 St.green_features = [power, climate]
 
 #Hall.create(:name=>"Stern")
 #Hall.create(:name=>"Sutardja Dai Hall")
-#Hall.create(:name=>"Tang Center")
-Tan = Hall.create(:name=>"Tan Hall")
+Tang = Hall.create(:name=>"Tang Center", :streamid=>"5d617fa4-0268-5449-91bf-e5d974c705c4")
+
+Tan = Hall.create(:name=>"Tan Hall New (as of 1/12/12)", :streamid=>"6de5050f-5edc-5897-aaff-812bb629c0dc")
 Tan.green_features = [climate, power]
 
-Tol = Hall.create(:name=>"Tolman Hall")
+Tol = Hall.create(:name=>"Tolman Hall", :streamid=>"9fe28603-c7f1-5af0-8c2d-dcea13c73202")
 Tol.green_features = [climate, power]
 
 #Hall.create(:name=>"Tolman Sub")
 #Hall.create(:name=>"Union")
 #Hall.create(:name=>"Univ Art Ctr")
-Univer = Hall.create(:name=>"University Hall")
+Univer = Hall.create(:name=>"University Hall", :streamid=>"4d87f83e-6560-5c7e-bfbe-66dd702349d1")
 Univer.green_features = [climate, strategic]
 
 #Hall.create(:name=>"University Sb")
-VL = Hall.create(:name=>"Valley Life Sciences")
+VL = Hall.create(:name=>"Valley Life Sciences", :streamid=>"b5a3d8b4-6482-57d4-9511-b1b718494c6a")
 VL.green_features = [strategic, power, climate]
 
 #Hall.create(:name=>"Warren Hall/Oxford Tract")
 #Hall.create(:name=>"Wellman Ctyd")
 #Hall.create(:name=>"Wellman Hall")
-Wheel = Hall.create(:name=>"Wheeler Hall")
+Wheel = Hall.create(:name=>"Wheeler Hall", :streamid=>"f9e5a8d9-a462-5cce-bfdf-180444b3d39c")
 Wheel.green_features = [power, climate, strategic]
 
 #Hall.create(:name=>"Women Fac Clb")
-Wurst = Hall.create(:name=>"Wurster Hall")
+Wurst = Hall.create(:name=>"Wurster Hall", :streamid=>"73ae8d8a-1749-5d7c-985e-66d545f55255")
 Wurst.green_features = [green_buildings, strategic, power, climate]
 #Hall.create(:name=>"Zellerbach Hall")
 

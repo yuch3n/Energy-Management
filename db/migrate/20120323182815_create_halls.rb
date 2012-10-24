@@ -2,6 +2,7 @@ class CreateHalls < ActiveRecord::Migration
   def up
     create_table 'halls' do |t|
       t.string 'name'
+      t.string 'streamid'
       t.timestamps
     end
   end
