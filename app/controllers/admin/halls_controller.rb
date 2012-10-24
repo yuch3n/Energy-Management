@@ -1,4 +1,4 @@
-class Admin::BuildingsController < ApplicationController
+class Admin::HallsController < ApplicationController
   before_filter :authenticate_admin!
   layout 'admin'
 
