@@ -3,11 +3,11 @@ class Admin::HallsController < ApplicationController
   layout 'admin'
 
   def index
-    @halls = Hall.all
+    @tips = Tip.all
   end
 
   def show
-    @hall = Hall.find_by_id params[:id]
+    @tip = Tip.find_by_id params[:id]
     if !@tip
       # redirect to the index page
       flash[:error] = "That tip does not exist."
