@@ -1,0 +1,29 @@
+<a href="/admin/tips/new">
+  <button class="btn">
+    New Building
+  </button>
+</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @tips.each do |tip| %>
+  <tr>
+    <td><%= link_to tip.title, admin_tip_path(tip)%></td>
+    <td>
+      <% tip.buildings.each_index do |i|%>
+	        <%= tip.buildings.[i].name %><% if i + 1 != tip.buildings.length %>,<% end %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<a href="/admin/tips/new">
+  <button class="btn">
+    New Building
+  </button>
+</a>
