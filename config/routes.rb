@@ -9,6 +9,7 @@ EnegeryManagement::Application.routes.draw do
   resources :feedback, :only => [:index]
   match 'emailer/submit_feedback', :controller => 'emailer', :action => 'submit_feedback'
   namespace :admin do
+    resources :buildings
     resources :tips
     resources :categories do
       member do
