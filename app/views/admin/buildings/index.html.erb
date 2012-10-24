@@ -1,4 +1,4 @@
-<a href="/admin/buildins/new">
+<a href="/admin/buildings/new">
   <button class="btn">
     New Building
   </button>
@@ -10,11 +10,12 @@
     </tr>
   </thead>
   <tbody>
-  <% @tips.each do |tip| %>
+  <% @halls.each do |hall| %>
   <tr>
-    <td><%= link_to tip.title, admin_tip_path(tip)%></td>
+    <td><%= link_to hall.name, admin_tip_path(tip)%></td>
   </tr>
   <% end %>
+
 </table>
 
 <a href="/admin/buildings/new">
