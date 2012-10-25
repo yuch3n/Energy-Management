@@ -36,12 +36,12 @@ class Admin::HallsController < ApplicationController
         flash[:notice] = "Hall '#{@hall.name}' deleted."
         redirect_to admin_halls_path
       else
-        flash[:error] = "Sorry, you aren't strong enough to destroy this tip."
+        flash[:error] = "Sorry, you aren't strong enough to destroy this hall."
         redirect_to edit_admin_hall_path
       end
     else
-      # hall was not found
-      flash[:error] = "Hall '#{@hall.name}' does not exist."
+      # tip was not found
+      flash[:error] = "That hall '#{@hall.name}' does not exist."
       redirect_to admin_halls_path
     end
   end
