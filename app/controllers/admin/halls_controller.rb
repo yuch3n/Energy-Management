@@ -25,12 +25,9 @@ class Admin::HallsController < ApplicationController
   end
 
   def create
-      hall = Hall.new
-      hall.name = params[:name]
-      hall.streamid = params[:streamid]
-      if hall
-        flash[:notice] = "#{hall.name} was successfully created."
-        hall.save!
+      @hall = Hall.create(:name => params[:name], :streamid => params[:streamid])
+      if @hall
+        flash[:notice] = "#{@hall.name} was successfully created."
         redirect_to admin_halls_path
       else
         # hall create failed, redirect back to "new" hall
