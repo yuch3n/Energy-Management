@@ -25,10 +25,12 @@ class Admin::HallsController < ApplicationController
   end
 
   def create
-      @hall = Hall.new params[:name]
-      if @hall
-        flash[:notice] = "#{@hall.name} was successfully created."
-        @hall.save!
+      hall = Hall.new
+      hall.name = params[:name]
+      hall.streamid = params[:streamid]
+      if hall
+        flash[:notice] = "#{hall.name} was successfully created."
+        hall.save!
         redirect_to admin_halls_path
       else
         # hall create failed, redirect back to "new" hall
@@ -38,7 +40,7 @@ class Admin::HallsController < ApplicationController
   end
 
   def destroy
-    @hall = Hall.find_by_id params[:id]
+    @hall = Hall.find_by_id params[:id] 
     if @hall
       if @hall.destroy
         flash[:notice] = "Hall '#{@hall.name}' deleted."
