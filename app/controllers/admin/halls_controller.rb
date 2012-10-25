@@ -25,18 +25,21 @@ class Admin::HallsController < ApplicationController
   end
 
   def create
-    @hall = Hall.create params[:hall]
-    @hall.streamid = params[:streamid]
-    if @hall && !@hall.streamid.nil? && !params[:hall].nil?
-      flash[:notice] = "#{@hall.name} was successfully created."
-      redirect_to admin_halls_path
+    if !params[:hall].nil? && !params[:streamid].nil?
+      @hall = Hall.create(:name => params[:hall], :streamid => params[:streamid])
+      if @hall
+        flash[:notice] = "#{@hall.name} was successfully created."
+        redirect_to admin_halls_path
+      else
+        # hall create failed, redirect back to "new" hall
+        flash[:error] = "Hall creation failed."
+        redirect_to new_admin_hall_path
+      end
     else
-      # hall create failed, redirect back to "new" hall
-      flash[:error] = "Hall creation failed."
+      flash[:error] = "Missing field."
       redirect_to new_admin_hall_path
     end
-  end
-
+  
   def destroy
     @hall = Hall.find_by_id params[:id]
     if @hall
