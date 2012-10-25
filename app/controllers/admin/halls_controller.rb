@@ -41,7 +41,7 @@ class Admin::HallsController < ApplicationController
       end
     else
       # hall was not found
-      flash[:error] = "That hall does not exist."
+      flash[:error] = "Hall '#{@hall.name}' does not exist."
       redirect_to admin_halls_path
     end
   end
