@@ -14,7 +14,7 @@
   <% @halls.each do |hall| %>
   <tr>
     <td><%= link_to hall.name, edit_admin_hall_path(hall)%></td>
-    <td><%= hall.streamid.to_yaml%></td>
+    <td><%= hall.streamid%></td>
   </tr>
   <% end %>
   </tbody>
