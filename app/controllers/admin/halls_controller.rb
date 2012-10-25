@@ -32,7 +32,7 @@ class Admin::HallsController < ApplicationController
   def destroy
     @hall = Hall.find_by_id params[:streamid]
     if @hall
-      if @hall.destroy
+      if @hall.delete
         flash[:notice] = "Hall '#{@hall.name}' deleted."
         redirect_to admin_halls_path
       else
