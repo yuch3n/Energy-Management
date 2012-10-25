@@ -29,6 +29,7 @@ class Admin::HallsController < ApplicationController
       @hall.streamid = params[:streamid]
       if @hall
         flash[:notice] = "#{@hall.name} was successfully created."
+        @hall.save!
         redirect_to admin_halls_path
       else
         # hall create failed, redirect back to "new" hall
