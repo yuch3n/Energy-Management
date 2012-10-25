@@ -11,7 +11,7 @@ class Admin::HallsController < ApplicationController
   end
 
   def create
-    @hall = Hall.create params[:streamid]
+    @hall = Hall.create params[:hall]
     if @hall && !params[:streamid].nil? && !params[:hall].nil?
       Hall.create :name => params[:hall], :streamid => params[:streamid]
       flash[:notice] = "#{@hall.name} was successfully created."
@@ -24,13 +24,13 @@ class Admin::HallsController < ApplicationController
   end
 
   def destroy
-    @hall = Hall.find_by_id params[:streamid]
+    @hall = Hall.find_by_id params[:id]
     if @hall
       if @hall.destroy
         flash[:notice] = "Hall '#{@hall.name}' deleted."
         redirect_to admin_halls_path
       else
-        flash[:error] = "Sorry, you aren't strong enough to destroy this hall."
+        flash[:error] = "Could not remove hall."
         redirect_to edit_admin_hall_path
       end
     else
