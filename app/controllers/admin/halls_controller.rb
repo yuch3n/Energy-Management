@@ -6,6 +6,10 @@ class Admin::HallsController < ApplicationController
     @halls = Hall.all(:order => 'name')
   end
 
+  def edit
+    @hall = Hall.find_by_id params[:id]
+  end
+
   def update
     @hall = Hall.find_by_id params[:id]
     if @hall
@@ -15,7 +19,7 @@ class Admin::HallsController < ApplicationController
         redirect_to edit_admin_hall_path
       else
         flash[:notice] = "#{@hall.name} was successfully updated."
-        redirect_to admin_halls_path @hall
+        redirect_to admin_halls_path
       end
     else
       # Couldn't find the hall, redirect to the index page with an error
