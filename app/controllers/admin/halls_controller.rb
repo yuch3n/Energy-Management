@@ -10,10 +10,6 @@ class Admin::HallsController < ApplicationController
     @categories = Category.all
   end
 
-  def delete
-
-  end
-
   def create
     @hall = Hall.create params[:hall]
     if @hall
