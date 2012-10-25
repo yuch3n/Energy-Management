@@ -6,8 +6,8 @@ class Admin::HallsController < ApplicationController
     @halls = Hall.all(:order => 'name')
   end
 
-  def new
-    @categories = Category.all
+  def edit
+    @hall = Hall.find_by_id params[:id]
   end
 
   def update
