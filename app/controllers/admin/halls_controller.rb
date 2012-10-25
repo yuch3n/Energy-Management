@@ -25,8 +25,7 @@ class Admin::HallsController < ApplicationController
   end
 
   def create
-    if !params[:hall].nil? && !params[:streamid].nil?
-      @hall = Hall.create(:name => params[:hall], :streamid => params[:streamid])
+      @hall = Hall.create(:name => params[:name], :streamid => params[:streamid])
       if @hall
         flash[:notice] = "#{@hall.name} was successfully created."
         redirect_to admin_halls_path
@@ -35,10 +34,6 @@ class Admin::HallsController < ApplicationController
         flash[:error] = "Hall creation failed."
         redirect_to new_admin_hall_path
       end
-    else
-      flash[:error] = "Missing field."
-      redirect_to new_admin_hall_path
-    end
   end
 
   def destroy
