@@ -37,7 +37,7 @@ class Admin::HallsController < ApplicationController
         redirect_to admin_halls_path
       else
         flash[:error] = "Sorry, you aren't strong enough to destroy this tip."
-        redirect_to admin_halls_path
+        redirect_to edit_admin_halls_path
       end
     else
       # hall was not found
