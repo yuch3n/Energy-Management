@@ -6,10 +6,6 @@ class Admin::HallsController < ApplicationController
     @halls = Hall.all(:order => 'name')
   end
 
-  def edit
-    @hall = Hall.find_by_id params[:id]
-  end
-
   def update
     @hall = Hall.find_by_id params[:id]
     if @hall
