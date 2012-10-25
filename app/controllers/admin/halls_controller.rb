@@ -23,8 +23,10 @@ class Admin::HallsController < ApplicationController
       redirect_to admin_halls_path
     end
   end
-Art_Museum = Hall.create(:name=>"Art Museum", :streamid=> "7ed3f5a4-a059-5a22-a3a9-4e43ad6cc530")
+
   def create
+      @name = params[:name]
+      @streamid = params[:streamid]
       @hall = Hall.create(:name=>@name, :streamid=>@streamid)
       if @hall
         flash[:notice] = "#{@hall.name} was successfully created."
