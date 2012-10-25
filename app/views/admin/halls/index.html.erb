@@ -7,6 +7,11 @@
   <thead>
     <tr>
       <th>Name</th>
+    <td>
+      <% @halls.each do |i|%>
+	        <%= tip.categories[i].name %><% if i + 1 != tip.categories.length %>,<% end %>
+      <% end %>
+    </td>
     </tr>
   </thead>
   <tbody>
