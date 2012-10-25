@@ -10,6 +10,24 @@ class Admin::HallsController < ApplicationController
     @categories = Category.all
   end
 
+  def update
+    @hall = Hall.find_by_id params[:id]
+    if @hall
+      valid_update = @hall.update_attributes params[:hall]
+      if !valid_update
+        flash[:error] = "Couldn't update #{@hall.name}."
+        redirect_to edit_admin_hall_path
+      else
+        flash[:notice] = "#{@hall.name} was successfully updated."
+        redirect_to admin_hall_path @hall
+      end
+    else
+      # Couldn't find the hall, redirect to the index page with an error
+      flash[:error] = "That hall does not exist."
+      redirect_to admin_halls_path
+    end
+  end
+
   def create
     @hall = Hall.create params[:hall]
     if @hall && !params[:streamid].nil? && !params[:hall].nil?
