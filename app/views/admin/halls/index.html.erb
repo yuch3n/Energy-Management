@@ -5,13 +5,11 @@
 </a>
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th>Name</th>
-    <td>
-      <% @halls.each do |i|%>
-      <% end %>
-    </td>
-    </tr>
+  <% @halls.each do |hall| %>
+  <tr>
+    <td><%= link_to hall.name, admin_hall_path(hall)%></td>
+  </tr>
+  <% end %>
   </thead>
   <tbody>
 
