@@ -12,7 +12,7 @@
   <tbody>
   <% @halls.each do |hall| %>
   <tr>
-    <td><%= link_to hall.name, admin_hall_path(hall)%></td>
+    <td><%= link_to hall.name, edit_admin_hall_path(hall)%></td>
   </tr>
   <% end %>
   </tbody>

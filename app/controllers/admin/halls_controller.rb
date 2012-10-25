@@ -10,4 +10,8 @@ class Admin::HallsController < ApplicationController
     @categories = Category.all
   end
 
+  def delete
+
+  end
+
 end
