@@ -15,7 +15,7 @@ class Admin::HallsController < ApplicationController
         redirect_to edit_admin_hall_path
       else
         flash[:notice] = "#{@hall.name} was successfully updated."
-        redirect_to admin_hall_path @hall
+        redirect_to admin_halls_path
       end
     else
       # Couldn't find the hall, redirect to the index page with an error
