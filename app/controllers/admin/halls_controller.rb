@@ -25,7 +25,7 @@ class Admin::HallsController < ApplicationController
   end
 
   def create
-      @hall = Hall.create params[:name]
+      @hall = Hall.new params[:name]
       @hall.streamid = params[:streamid]
       if @hall
         flash[:notice] = "#{@hall.name} was successfully created."
