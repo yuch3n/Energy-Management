@@ -1,6 +1,6 @@
-<%= form_tag admin_tip_path(@tip), :method => 'put' do %>
-  <%= label_tag :title, 'Title' %>
-  <%= text_field :tip, 'title' %>
+<%= form_tag admin_hall_path(@hall), :method => 'put' do %>
+  <%= label_tag :title, 'Name' %>
+  <%= text_field :hall, 'Name' %>
 
   <%= submit_tag 'Update Hall', :class => 'btn btn-success' %>
 <% end %>
