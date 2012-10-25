@@ -39,7 +39,8 @@ class Admin::HallsController < ApplicationController
       flash[:error] = "Missing field."
       redirect_to new_admin_hall_path
     end
-  
+  end
+
   def destroy
     @hall = Hall.find_by_id params[:id]
     if @hall
