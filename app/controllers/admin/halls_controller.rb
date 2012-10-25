@@ -29,4 +29,22 @@ class Admin::HallsController < ApplicationController
     end
   end
 
+  def destroy
+    @hall = Hall.find_by_id params[:streamid]
+    if @hall
+      if @hall.destroy
+        flash[:notice] = "Hall '#{@hall.name}' deleted."
+        redirect_to admin_halls_path
+      else
+        flash[:error] = "Sorry, you aren't strong enough to destroy this tip."
+        redirect_to edit_admin_hall_path
+      end
+    else
+      # hall was not found
+      flash[:error] = "That hall does not exist."
+      redirect_to admin_halls_path
+    end
+  end
+
+
 end
