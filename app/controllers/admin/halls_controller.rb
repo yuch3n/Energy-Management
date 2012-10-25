@@ -26,7 +26,8 @@ class Admin::HallsController < ApplicationController
 
   def create
     @hall = Hall.create params[:hall]
-    if @hall && !params[:streamid].nil? && !params[:hall].nil?
+    @hall.streamid = params[:streamid]
+    if @hall && !@hall.streamid.nil? && !params[:hall].nil?
       flash[:notice] = "#{@hall.name} was successfully created."
       redirect_to admin_halls_path
     else
