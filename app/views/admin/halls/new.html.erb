@@ -1,9 +1,9 @@
 <%= form_tag admin_halls_path, :method => 'post' do %>
   <%= label_tag :name, 'Name' %>
-  <%= text_field :name, 'name' %>
+  <%= text_field(:hall, :name), 'name' %>
   
   <%= label_tag :streamid, 'Id' %>
-  <%= text_field :streamid, 'id' %>
+  <%= text_field(:hall, :streamid), 'id' %>
 
   <br/>
 
