@@ -8,7 +8,10 @@ class Admin::HallsController < ApplicationController
 
   def update
     @hall = Hall.find_by_id params[:id]
-    if @hall
+    if params[:hall][:name] == "" || params[:hall][:streamid] == ""
+      flash[:error] = "Can't have empty name or stream id."
+      redirect_to admin_halls_path
+    elsif @hall
       valid_update = @hall.update_attributes params[:hall]
       if !valid_update
         flash[:error] = "Couldn't update #{@hall.name}."
@@ -25,7 +28,13 @@ class Admin::HallsController < ApplicationController
   end
 
   def create
-      @hall = Hall.create(params[:hall])
+    # fail if input is empty
+    if params[:hall][:name] == "" || params[:hall][:streamid] == ""
+      flash[:error] = "Can't have empty name or stream id."
+      redirect_to new_admin_hall_path
+    else
+      @hall = Hall.create!(params[:hall])
+      # success!
       if @hall
         flash[:notice] = "#{@hall.name} was successfully created."
         redirect_to admin_halls_path
@@ -34,8 +43,8 @@ class Admin::HallsController < ApplicationController
         flash[:error] = "Hall creation failed."
         redirect_to new_admin_hall_path
       end
+    end
   end
-
   def destroy
     @hall = Hall.find_by_id params[:id] 
     if @hall
