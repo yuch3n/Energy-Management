@@ -1,6 +1,8 @@
 <%= form_tag admin_hall_path(@hall), :method => 'put' do %>
   <%= label_tag :name, 'Name' %>
   <%= text_field(:hall, :name) %>
+  <br/>
+  <%= 'Current name is: #{@params[:hall][:name]}' %>
 
   <%= label_tag :streamid, 'Id' %>
   <%= text_field(:hall, :streamid) %>
