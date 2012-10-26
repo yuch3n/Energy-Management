@@ -1,3 +1,4 @@
+#Author: Leslie Chang
 class Admin::HallsController < ApplicationController
   before_filter :authenticate_admin!
   layout 'admin'
