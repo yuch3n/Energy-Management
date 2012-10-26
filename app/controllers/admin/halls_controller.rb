@@ -10,7 +10,7 @@ class Admin::HallsController < ApplicationController
     @hall = Hall.find_by_id params[:id]
     if params[:hall][:name] == "" || params[:hall][:streamid] == ""
       flash[:error] = "Can't have empty name or stream id."
-      redirect_to admin_halls_path
+      redirect_to edit_admin_hall_path
     elsif @hall
       valid_update = @hall.update_attributes params[:hall]
       if !valid_update
