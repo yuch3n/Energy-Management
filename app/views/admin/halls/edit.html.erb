@@ -1,9 +1,9 @@
 <%= form_tag admin_hall_path(@hall), :method => 'put' do %>
   <%= label_tag :name, 'Name' %>
-  <%= text_field :name, 'Name' %>
+  <%= text_field(:hall, :name) %>
 
   <%= label_tag :streamid, 'Id' %>
-  <%= text_field :streamid, 'id' %>
+  <%= text_field(:hall, :streamid) %>
 
   <br/>
   <%= submit_tag 'Update Hall', :class => 'btn btn-success' %>

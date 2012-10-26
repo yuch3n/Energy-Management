@@ -9,7 +9,7 @@ class Admin::HallsController < ApplicationController
   def update
     @hall = Hall.find_by_id params[:id]
     if @hall
-      valid_update = @hall.update_attributes params[:name]
+      valid_update = @hall.update_attributes params[:hall]
       if !valid_update
         flash[:error] = "Couldn't update #{@hall.name}."
         redirect_to admin_halls_path
