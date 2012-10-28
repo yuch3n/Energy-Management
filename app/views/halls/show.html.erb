@@ -6,6 +6,9 @@
       <h1><%= @hall.name %></h1>
     </div>
     
+    <br>
+    <br>
+
     <!-- End header -->
     <div id="intervalControls">
       <ul data-role="controlgroup" data-type="horizontal" class="localnav">
@@ -15,8 +18,9 @@
       </ul>
     </div>
     
+    <br>
     <div id="graphContainer">
-      <script id="pulseGraph" src="<%= @path %>"></script>
+     
     </div>
     
     <!-- Begin footer -->
@@ -93,11 +97,23 @@
     chart = new Highcharts.Chart({
       chart: {
         renderTo: 'graphContainer',   // The element to render the chart into
+	 backgroundColor: {
+                linearGradient: [0, 0, 500, 500],
+                stops: [
+                    [0, 'rgb(247, 230, 230)'],
+                    [1, 'rgb(245, 239, 228)']
+                ]
+        },
+	 borderColor: '#86A7C4',
+ 	 borderWidth: 3,
         type: 'area',
         zoomType: 'x'
       },
       title: {
         text: '<%= @hall.name %>'
+      },
+      tooltip: {
+	 crosshairs: true
       },
       xAxis: {
         type: 'datetime'    // Tells highcharts to interpolate the data using the date
@@ -115,6 +131,7 @@
           marker: {
             enabled: false
           },
+	   dashStyle: 'Solid',
           fillColor: {
             linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
             stops: [
