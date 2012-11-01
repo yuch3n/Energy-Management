@@ -9,10 +9,11 @@ class EmailerController < ApplicationController
       recipient = 'danieljchoi92@gmail.com'
       subject = 'myPower Feedback'
       message = params[:message]
-      flash[:notice] = "Submission failed: empty form"
       if not message.empty? 
         Emailer.contact(recipient, subject, message).deliver
-        flash[:notice] = "Successfully sent"
+        flash[:success] = "Successfully sent"
+      else
+        flash[:error] = "Submission failed: empty form"
       end
       redirect_to "/halls"
   end
