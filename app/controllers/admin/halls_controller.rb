@@ -15,6 +15,10 @@ class Admin::HallsController < ApplicationController
     end
   end
 
+  def edit
+    @hall = Hall.find_by_id params[:id]
+  end
+
   def update
     @hall = Hall.find_by_id params[:id]
     if params[:hall][:name] == "" || params[:hall][:streamid] == ""
