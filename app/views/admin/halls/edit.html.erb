@@ -1,5 +1,5 @@
 <%# Author: Leslie Chang %>
-<h3>Update Hall</h3>
+<h3>Update Building</h3>
 <%= form_tag admin_hall_path(@hall), :method => 'put' do %>
   <%= label_tag :name, 'Name' %>
   <%= text_field(:hall, :name) %>
@@ -8,10 +8,12 @@
   <%= text_field(:hall, :streamid) %>
 
   <br/>
-  <%= submit_tag 'Update Hall', :class => 'btn btn-success' %>
+  <%= submit_tag 'Update Building', :class => 'btn btn-success' %>
 <% end %>
 
-<%= button_to 'Delete Hall', admin_hall_path(@hall), :method => :delete, :confirm => "Are you sure?", :class => 'btn btn-danger'%> 
+<%= button_to 'Delete Building', admin_hall_path(@hall), :method => :delete, :confirm => "Are you sure?", :class => 'btn btn-danger'%> 
+
+<a href="/admin/halls"><button class="btn">Cancel</button></a>
 
 <script type="text/javascript" src="/assets/jquery.wysiwyg.js"></script>
 <script type="text/javascript">
