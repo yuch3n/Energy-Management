@@ -1,5 +1,5 @@
 <%# Author: Leslie Chang %>
-<h3>Create Hall</h3>
+<h3>Create Building</h3>
 <%= form_tag admin_halls_path, :method => 'post' do %>
   <%= label_tag :name, 'Name' %>
   <%= text_field(:hall, :name) %>
@@ -11,6 +11,7 @@
 
   <%= submit_tag 'Create Hall', :class => 'btn btn-success' %>
 <% end %>
+<a href="/admin/halls" data-role="button" data-rel="back" data-theme="a">Back</a>
 
 <script type="text/javascript" src="/assets/jquery.wysiwyg.js"></script>
 <script type="text/javascript">
