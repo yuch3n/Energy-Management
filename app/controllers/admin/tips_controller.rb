@@ -25,7 +25,7 @@ class Admin::TipsController < ApplicationController
       if params[:categories]
         params[:categories].each do |name|
           # checked is always "1" in here, i.e. only checked categories are passed
-          CategoryTip.create :tip_id => @tip.id, :category_id => Category.find_by_name(name).id
+          CategoryTip.create :tip_id => @tip.id, :category_id => Category.find_by_name(name)
         end
       end
       flash[:notice] = "#{@tip.title} was successfully created."

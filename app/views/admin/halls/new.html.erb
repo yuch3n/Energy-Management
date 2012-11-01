@@ -7,6 +7,14 @@
   <%= label_tag :streamid, 'Id' %>
   <%= text_field(:hall, :streamid) %>
 
+  <%= label_tag :features, 'Features' %>
+  <% @features.each do |feature| %>
+    <label class="checkbox">
+      <%= check_box_tag "features[#{feature.name}]", 1 %>
+      <%= feature.full_name %>
+    </label>
+  <% end %>
+
   <br/>
 
   <%= submit_tag 'Create Hall', :class => 'btn btn-success' %>

@@ -15,8 +15,13 @@ class Admin::HallsController < ApplicationController
     end
   end
 
+  def new
+    @features = GreenFeature.all
+  end
+
   def edit
     @hall = Hall.find_by_id params[:id]
+    @features = GreenFeature.all
   end
 
   def update
@@ -30,6 +35,13 @@ class Admin::HallsController < ApplicationController
         flash[:error] = "Couldn't update #{@hall.name}."
         redirect_to admin_halls_path
       else
+        HallFeature.destroy_all :hall_id => params[:id]
+        if params[:features]
+          params[:features].each do |name|
+            # checked is always "1" in here, i.e. only checked categories are passed
+            HallFeature.create :hall_id => params[:id], :green_feature_id => GreenFeature.find_by_name(name).id
+          end
+        end
         flash[:notice] = "#{@hall.name} was successfully updated."
         redirect_to admin_halls_path
       end
@@ -49,6 +61,12 @@ class Admin::HallsController < ApplicationController
       @hall = Hall.create!(params[:hall])
       # success!
       if @hall
+        if params[:features]
+          params[:features].each do |name|
+            # checked is always "1" in here, i.e. only checked features are passed
+            HallFeature.create :hall_id => @hall.id, :green_feature_id => GreenFeature.find_by_name(name).id
+          end
+        end
         flash[:notice] = "#{@hall.name} was successfully created."
         redirect_to admin_halls_path
       end
