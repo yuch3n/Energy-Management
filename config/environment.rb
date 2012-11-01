@@ -9,8 +9,8 @@ config.action_mailer.smtp_settings = {
   :address              => "smtp.sendgrid.com",
   :port                 => '587',
   :domain               => 'heroku.com',
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
+  :user_name      => "app8427599@heroku.com",
+  :password       => "ulhuqeff",
   :authentication       => 'plain',
 }
 end
