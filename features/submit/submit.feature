@@ -7,7 +7,7 @@ Feature: Submit feedback
 	I want to submit feedback to administrators
 
 Background:
-	Given I am on "/feedback"
+	Given I am on "/feedback/submit_form?return_to=/halls"
 
 Scenario: I should be able to sucessfully and annonymously send a feedback
 	  When I fill in "message" with "testing comment"
