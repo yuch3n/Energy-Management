@@ -42,8 +42,7 @@
 		cursor: pointer;
 		text-decoration: none;
 	}
-	#content {padding-left: 30px; padding-right: 30px;}
-	#flash-notice {text-align: center; background-color: yellow;}
+	#content-holder {padding-left: 30px; padding-right: 30px;}
 
 	.message{
      -webkit-background-size: 40px 40px;
@@ -137,9 +136,8 @@
 <% end %>
 
 <%= link_to 'FEEDBACK', {:controller=>"feedback", :action =>"submit_form", :return_to=>request.fullpath}, {"class"=>"rotate", "id"=>"feedback-widget"}%> 
-<div id="content">
+<div id="content-holder">
 <%= yield %>
 </div>
-
 </body>
 </html>

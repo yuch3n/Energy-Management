@@ -11,9 +11,9 @@ class EmailerController < ApplicationController
       message = params[:message]
       if not message.empty? 
         Emailer.contact(recipient, subject, message).deliver
-        flash[:success] = "Successfully sent"
+        flash[:success] = "Feedback has been successfully sent"
       else
-        flash[:error] = "Submission failed: empty form"
+        flash[:error] = "Feedback submission failed: Empty Form"
       end
       redirect_to params[:return_addr]
   end
@@ -23,7 +23,7 @@ class EmailerController < ApplicationController
       subject = 'myPower Energy Use Anomaly Reported'
       message = "A user has submitted an energy use anomaly flag for building: "+Hall.find_by_id(Integer(params[:id])).name
       Emailer.contact(recipient, subject, message).deliver
-      flash[:success] = "Successfully sent"
+      flash[:success] = "An alert has been sent to the administrator"
 
       redirect_to :back
   end
