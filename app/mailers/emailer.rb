@@ -3,7 +3,7 @@ class Emailer < ActionMailer::Base
       @subject = subject
       @recipients = recipient
       @message = message
-      @from = 'myPowerBerkeley@gmail.com'
+      @from = 'myPower-noreply@berkeley.edu'
       @sent_on = Time.now
       @headers = {}
    end
