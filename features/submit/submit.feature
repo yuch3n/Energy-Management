@@ -12,9 +12,9 @@ Background:
 Scenario: I should be able to sucessfully and annonymously send a feedback
 	  When I fill in "message" with "testing comment"
 	  And I press "Submit"
-	  Then I should see "Successfully sent"
+	  Then I should see "Feedback has been successfully sent"
 
 Scenario: I should not be able to successfully send an empty feedback
 	  When I fill in "message" with "" 
 	  And I press "Submit"
-	  Then I should see "Submission failed: empty form"
+	  Then I should see "Feedback submission failed: Empty Form"

@@ -1,5 +1,12 @@
+<% if flash[:success] != nil %>
+<style>
+  #content-page{
+    margin-top:52px;
+  }
+</style>
+<% end %>
 <!-- Begin Graph Tab -->
-<div class="contentPage" id="graphContent" data-role="page">
+<div id="content-page" class="contentPage" id="graphContent" data-role="page">
     <!-- Begin header -->
     <div data-role="header" class="ui-bar-b" data-position="fixed">
       <a href="/halls" data-theme="a" data-ajax="false">Back</a>
@@ -86,6 +93,17 @@
   #graphContainer { overflow: hidden; }
   #intervalControls { width: 315px; height: 45px; text-align: center; margin: 0 auto;}
   #intervalControls ul { margin: 5px auto; width: 266px; }
+
+  .success{
+    margin-left: -9px;
+    margin-top: -9px;
+    z-index: 1001;
+    position:absolute;
+  }
+
+  .message{
+    font-family: Helvetica,Arial,sans-serif;
+  }
 </style>
 
 <!-- Uncomment this block when we start using highcharts -->
