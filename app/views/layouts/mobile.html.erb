@@ -136,8 +136,7 @@
 </div>
 <% end %>
 
-<div id="flash-notice"><%= flash[:notice] %></div>
-<a class="rotate" id="feedback-widget" href="/feedback"> FEEDBACK </a>
+<%= link_to 'FEEDBACK', {:controller=>"feedback", :action =>"submit_form", :return_to=>request.fullpath}, {"class"=>"rotate", "id"=>"feedback-widget"}%> 
 <div id="content">
 <%= yield %>
 </div>

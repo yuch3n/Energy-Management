@@ -15,6 +15,16 @@ class EmailerController < ApplicationController
       else
         flash[:error] = "Submission failed: empty form"
       end
-      redirect_to "/halls"
+      redirect_to params[:return_addr]
+  end
+
+  def submit_flag
+      recipient = 'danieljchoi92@gmail.com'
+      subject = 'myPower Energy Use Anomaly Reported'
+      message = "A user has submitted an energy use anomaly flag for building: "+Hall.find_by_id(Integer(params[:id])).name
+      Emailer.contact(recipient, subject, message).deliver
+      flash[:success] = "Successfully sent"
+
+      redirect_to :back
   end
 end

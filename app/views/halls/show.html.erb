@@ -3,6 +3,7 @@
     <!-- Begin header -->
     <div data-role="header" class="ui-bar-b" data-position="fixed">
       <a href="/halls" data-theme="a" data-ajax="false">Back</a>
+      <%= link_to 'Report Anomaly', {:controller=>"emailer", :action =>"submit_flag", :id=>@hall.id}, {"data-theme"=>"a", "data-ajax"=>"false", "class"=>"ui-btn-right"}%> 
       <h1><%= @hall.name %></h1>
     </div>
     
