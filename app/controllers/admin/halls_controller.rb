@@ -10,7 +10,7 @@ class Admin::HallsController < ApplicationController
   def show
     @hall = Hall.find_by_id params[:id]
     if !@hall
-      flash[:error] = "That hall does not exist."
+      flash[:error] = "That building does not exist."
       redirect_to admin_halls_path
     end
   end
@@ -47,7 +47,7 @@ class Admin::HallsController < ApplicationController
       end
     else
       # Couldn't find the hall, redirect to the index page with an error
-      flash[:error] = "That hall does not exist."
+      flash[:error] = "That building does not exist."
       redirect_to admin_halls_path
     end
   end
@@ -77,12 +77,12 @@ class Admin::HallsController < ApplicationController
     @hall = Hall.find_by_id params[:id] 
     if @hall
       if @hall.destroy
-        flash[:notice] = "Hall '#{@hall.name}' deleted."
+        flash[:notice] = "Building '#{@hall.name}' deleted."
         redirect_to admin_halls_path
       end
     else
       # tip was not found
-      flash[:error] = "That hall does not exist."
+      flash[:error] = "That building does not exist."
       redirect_to admin_halls_path
     end
   end
