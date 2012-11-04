@@ -18,7 +18,7 @@ Background: I am a authenticated user
  @javascript
  Scenario: I should not be able to add a building with empty fields
           Given I am on "/admin/halls"
-          And I press "New Hall"
+          And I press "New Building"
           And I fill in "hall_name" with "Popicle"
           And I press "Create Hall"
           Then I should be on "/admin/halls/new"
@@ -33,7 +33,7 @@ Background: I am a authenticated user
  	  When I follow "Sirotan"
  	  And I fill in "hall_name" with "Platypuu"
           And I fill in "hall_streamid" with "88888888"
- 	  And I press "Update Hall"
+ 	  And I press "Update Building"
           Then I should see "Platypuu was successfully updated"
  	  And I go to "/admin/halls"
  	  And I should see "Platypuu"
@@ -44,10 +44,10 @@ Background: I am a authenticated user
           Given I am on "/admin/halls"
           When I follow "Sirotan"
           And I fill in "hall_streamid" with "88888888"
-          And I press "Update Hall"
+          And I press "Update Building"
           Then I should see "Can't have empty name or stream id."
           And I fill in "hall_name" with "Popicle"
-          And I press "Update Hall"
+          And I press "Update Building"
           Then I should see "Can't have empty name or stream id."
 
  @javascript
@@ -55,13 +55,13 @@ Background: I am a authenticated user
           Given I am on "/admin/halls/9999/edit"
           And I fill in "hall_name" with "blah"
           And I fill in "hall_streamid" with "blah"
-          And I press "Update Hall"
+          And I press "Update Building"
           Then I should see "That hall does not exist."
 
  @javascript
  Scenario: I should not be able to edit a building that does not exist
           Given I am on "/admin/halls/9999/edit"
-          And I press "Delete Hall"
+          And I press "Delete Building"
           Then I should see "That hall does not exist."
 	  
 @javascript	  
@@ -69,7 +69,7 @@ Scenario: I should be able to delete buildings
  	  Given I am on "/admin/halls"
 	  Then I should see "Sirotan"
  	  When I follow "Sirotan"
- 	  And I press "Delete Hall"
+ 	  And I press "Delete Building"
  	  Then I should see "'Sirotan' deleted"
 	  Then I should not see "77777777"
 
