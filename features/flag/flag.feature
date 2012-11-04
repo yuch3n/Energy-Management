@@ -4,6 +4,6 @@ Scenario: User raises a flag.  Flag button is disabled for that building for tha
 
  Given I am on "/halls/1"
 
- When I click on "Report Anomaly"
+ When I press "Report Anomaly"
 
  Then I should see "An alert has been sent to the administrator"
