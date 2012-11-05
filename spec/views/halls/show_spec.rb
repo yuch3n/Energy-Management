@@ -21,11 +21,6 @@ describe 'halls/show.html.erb' do
     rendered.should have_selector("a", :content => "Green Features")
   end
 
-  it 'should see the correct graph' do
-    render
-    rendered.should include("?key=12345678")
-  end
-
   context "given the hall has green features" do
     before :each do
       @hall_feature = FactoryGirl.create(:hall_feature, { :hall => @hall, :green_feature => @feature1 })
