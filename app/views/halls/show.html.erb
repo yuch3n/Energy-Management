@@ -1,4 +1,14 @@
 <% if flash[:success] != nil %>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="myPower.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+</head>
 <style>
   #graphContent{
     margin-top:50px;
@@ -14,10 +24,10 @@
     <!-- Begin header -->
     <div data-role="header" class="ui-bar-b" data-position="fixed">
       <a href="/halls" data-theme="a" data-ajax="false">Back</a>
-      <%= link_to 'Report Anomaly', {:controller=>"emailer", :action =>"submit_flag", :id=>@hall.id}, {"data-theme"=>"a", "data-ajax"=>"false", "class"=>"ui-btn-right"}%> 
+      <%= link_to 'Report Anomaly', {:controller=>"emailer", :action =>"submit_flag", :id=>@hall.id}, {"data-theme"=>"a", "data-ajax"=>"false", "class"=>"ui-btn-right"}%>
       <h1><%= @hall.name %></h1>
     </div>
-    
+
     <br>
     <br>
 
@@ -29,20 +39,20 @@
         <li><a href="/halls/<%=@hall.id%>?interval=month" data-ajax="false" data-role="button" class="intervalSelection <% if @interval == 'month' %>ui-btn-active<% end %>">Month</a></li>
       </ul>
     </div>
-    
+
     <br>
     <div id="graphContainer">
-     
+
     </div>
-    
+
     <!-- Begin footer -->
     <div id="footer-holder" data-role="footer" class="ui-body-b" data-position="fixed">
-	<div data-role="navbar">
-	    <ul>
-		<li><a href="#graphContent" data-icon="graph" class="ui-btn-active" data-role="tab">Graph</a></li>
-		<li><a href="#featureContent" data-icon="feature" data-role="tab">Green Features</a></li>
-	    </ul>
-	</div>
+  <div data-role="navbar">
+      <ul>
+    <li><a href="#graphContent" data-icon="graph" class="ui-btn-active" data-role="tab">Graph</a></li>
+    <li><a href="#featureContent" data-icon="feature" data-role="tab">Green Features</a></li>
+      </ul>
+  </div>
     </div>
     <!-- End footer -->
 </div>
@@ -58,22 +68,22 @@
 
     <ul data-role="listview" data-theme="c" data-inset="true" id="green-features">
       <% @green_features.each do |feature| %>
-      	<li>
-      	  <img src="/assets/green features/<%=feature.name%>.png" />
-      	  <h3><%=feature.full_name%></h3>
-      	  <p><%=feature.content%><p>
-    	  </li>
+        <li>
+          <img src="/assets/green features/<%=feature.name%>.png" />
+          <h3><%=feature.full_name%></h3>
+          <p><%=feature.content%><p>
+        </li>
       <% end %>
     </ul>
-    
+
     <!-- Begin footer -->
     <div data-role="footer" class="ui-body-b" data-position="fixed">
-	<div data-role="navbar">
-	    <ul>
-		<li><a href="#graphContent" data-icon="graph" data-role="tab">Graph</a></li>
-		<li><a href="#featureContent" data-icon="feature" data-role="tab" class="ui-btn-active">Green Features</a></li>
-	    </ul>
-	</div>
+  <div data-role="navbar">
+      <ul>
+    <li><a href="#graphContent" data-icon="graph" data-role="tab">Graph</a></li>
+    <li><a href="#featureContent" data-icon="feature" data-role="tab" class="ui-btn-active">Green Features</a></li>
+      </ul>
+  </div>
     </div>
     <!-- End footer -->
 </div>
@@ -87,7 +97,7 @@
   .ui-icon-graph { background: url('/assets/graph.png') no-repeat 0px 0px !important; background-size: 28px 20px; }
   .ui-icon-feature { background: url('/assets/green_feature.png') no-repeat 0px 0px !important; background-size: 12px 20px; }
   #green-features .ui-li-desc { overflow: visible; white-space: normal; }
-  
+
   .localnav { margin-top: 15px; }
   .localnav li { float: left; }
 
@@ -104,7 +114,6 @@
     z-index: 1001;
     position:absolute;
   }
-
   .message{
     font-family: Helvetica,Arial,sans-serif;
   }
@@ -119,16 +128,17 @@
   $(document).ready(function () {
     chart = new Highcharts.Chart({
       chart: {
-        renderTo: 'graphContainer',   // The element to render the chart into
-	 backgroundColor: {
-                linearGradient: [0, 0, 500, 500],
+        renderTo: 'graphContainer',   // The element to render the chart intono
+        type: 'area',
+   backgroundColor: {
+                linearGradient: [0, 500, 0, 500],
                 stops: [
-                    [0, 'rgb(247, 230, 230)'],
-                    [1, 'rgb(245, 239, 228)']
+                    [0, '#EDDDC7'],
+                    [1, '#EDEBE1']
                 ]
         },
-	 borderColor: '#86A7C4',
- 	 borderWidth: 3,
+   borderColor: '#191963',
+   borderWidth: 4.5,
         type: 'area',
         zoomType: 'x'
       },
@@ -136,7 +146,7 @@
         text: '<%= @hall.name %>'
       },
       tooltip: {
-	 crosshairs: true
+   crosshairs: true
       },
       xAxis: {
         type: 'datetime'    // Tells highcharts to interpolate the data using the date
@@ -154,20 +164,21 @@
           marker: {
             enabled: false
           },
-	   dashStyle: 'Solid',
+     dashStyle: 'Solid',
           fillColor: {
-            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 2.5 },
             stops: [
-              [0, Highcharts.getOptions().colors[0]],
-              [1, 'rgba(2, 0, 0, 0)']
+              [0, '#191963'],
+              [1, '#FFFFFF']
             ]
           },
           lineWidth: 1
         }
       },
-      series: [{ 
+      series: [{
         name: 'kW',
-        data: (<%=raw @data %>)[0].Readings }]    // Array of data points to render
+        color: '#191963',
+        data: (<%=raw @data %>).Readings }]    // Array of data points to render
                     // Because we are using datetime, each point should be an array of the form:
                     // [timestamp, yValue], where timestamp is in UTC format
     });

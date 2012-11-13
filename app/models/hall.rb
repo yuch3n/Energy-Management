@@ -1,4 +1,6 @@
 require 'net/http'
+require 'rubygems'
+require 'json'
 
 class Time
   def to_ms
@@ -11,7 +13,7 @@ class Hall < ActiveRecord::Base
   has_many :green_features, :through => :hall_features
   has_many :settings, :through => :pinned_halls
   belongs_to :operational_unit
-  
+
   def get_graph (width = 700, height = 300, interval = 'week')
     if self.key
       "http://my.pulseenergy.com/embed/?key=#{self.key}&width=#{width}&height=#{height}&interval=#{interval}"
@@ -31,10 +33,32 @@ class Hall < ActiveRecord::Base
     resp.body
   end
 
-  def getquery(starttime, endtime)
+
+ def getquery(starttime, endtime)
     streamlimit = 1000
-    "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where uuid = '#{self.streamid}' and ((Properties/UnitofMeasure = 'kW' or Properties/UnitofMeasure = 'Watts') or Properties/UnitofMeasure = 'W') and Metadata/Location/Building = '#{self.name}' and not Metadata/Extra/Operator like 'sum%'"
-  end
+    "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where (Metadata/Extra/ChannelName = 'kW demand' or Metadata/Extra/ChannelName = 'kW td' or
+                                                                                 Metadata/Extra/ChannelName = 'Watts, 3-Ph total' or
+                                                                                 Metadata/Extra/ChannelName = 'BARROWS MAIN ELECTRIC Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'BARROWS MAIN ELECTRIC Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'Haas Pavilion Main Electric Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'Sub 1 Main Meter Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'Sub 2 Main Meter Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'Hargrove Main Electric Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'EMON Meter Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'Main Electrical Meter Demand' or
+                                                                                 Metadata/Extra/ChannelName = '225 KVA Xfmr - Panel LNDB-2 Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'U Hall Rm 33B kWH meter Demand' or
+                                                                                 Metadata/Extra/ChannelName = 'Wurster Main Electric Instantaneous' or
+                                                                                 uuid = '22109bd7-06d9-58a0-902f-2a5ed92f92e1' or
+                                                                                 uuid = 'bc3a93bc-9bdd-5c59-aa6e-63f7060b9d58' or
+                                                                                 uuid = '0545cbe9-26b4-5fb8-983b-cfe336b7b8af' or
+                                                                                 uuid = 'f9e52e06-697a-57af-9566-d05fabb001a4' or
+                                                                                 uuid = '19edb822-eccb-5289-8fee-a39cdda66cd5' or
+                                                                                 uuid = '1bf52ff9-2034-5fef-91b0-8b6cc7855f00')
+                                                                                 and Metadata/Location/Building = '#{self.name}' and not Metadata/Extra/Operator like 'sum%'"
+
+
+ end
 
   def getendtime interval
     if interval == "day"
