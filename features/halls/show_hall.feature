@@ -6,10 +6,10 @@ Feature: Users can view graph data
 
 Background:
 	Given the following halls exist:
-  	| id | name   | key                          |
-  	| 1  | Shofix | Bd5238Ki31GOL5ZewrQglA%3D%3D |
+  	| id | name   |
+  	| 1  | Morgan Hall |
 	Given I am on "/halls"
-	And I follow "Shofix"
+	And I follow "Morgan Hall"
 
 @javascript
 Scenario: Going to the show page and back

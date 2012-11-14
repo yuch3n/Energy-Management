@@ -6,13 +6,13 @@ Feature: Users can navigate through the hall index page
 
 Background:
 	Given the following halls exist:
-  	| id | name   | key                          |
-  	| 1  | Shofix | Bd5238Ki31GOL5ZewrQglA%3D%3D |
+  	| id | name   |
+  	| 1  | Morgan Hall |
 	And I am on "/halls"
 
 @javascript
 Scenario: Going to the show page and back
-	  When I follow "Shofix"
+	  When I follow "Morgan Hall"
 	  Then I should be on "/halls/1"
 
 	  When I follow "Day"
