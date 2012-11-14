@@ -7,7 +7,7 @@ describe HallsController do
     @hall_feature = FactoryGirl.create(:hall_feature, { :hall => @hall, :green_feature => @feature })
     Hall.stub(:find_by_id).and_return(@hall)
   end
-  
+
   describe 'access the hall index' do
     it 'should retrieve the list of all halls' do
       Hall.should_receive(:all)
