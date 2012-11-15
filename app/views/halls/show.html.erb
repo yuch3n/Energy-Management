@@ -23,6 +23,7 @@
     <br>
 
     <!-- End header -->
+
     <div id="intervalControls">
       <ul data-role="controlgroup" data-type="horizontal" class="localnav">
         <li><a href="/halls/<%=@hall.id%>?interval=day" data-ajax="false" data-role="button" class="intervalSelection <% if @interval == 'day' %>ui-btn-active<% end %>">Day</a></li>
@@ -32,9 +33,10 @@
     </div>
 
     <br>
-    <div id="graphContainer">
+    <div id="graphContainer"> </div>    
+    <br>
 
-    </div>
+
 
     <!-- Begin footer -->
     <div id="footer-holder" data-role="footer" class="ui-body-b" data-position="fixed">
@@ -75,7 +77,7 @@
     <li><a href="#featureContent" data-icon="feature" data-role="tab" class="ui-btn-active">Green Features</a></li>
       </ul>
   </div>
-    </div>
+    </div>	 
     <!-- End footer -->
 </div>
 <!-- End Green Feature Tab -->
@@ -95,8 +97,8 @@
   #content { padding: 25px; }
   .content-page { margin: 0 auto; }
 
-  #graphContainer { overflow: hidden; }
-  #intervalControls { width: 315px; height: 45px; text-align: center; margin: 0 auto;}
+  #graphContainer { margin-left: auto; margin-right:auto; width: 1000px}
+  #intervalControls { width: 315px; height: 45px; text-align:center; margin: 0 auto;}
   #intervalControls ul { margin: 5px auto; width: 266px; }
 
   .success{
@@ -121,54 +123,71 @@
       chart: {
         renderTo: 'graphContainer',   // The element to render the chart intono
         type: 'area',
-   backgroundColor: {
-                linearGradient: [0, 500, 0, 500],
+        height: 500,
+        width: 1000,
+        spacingLeft: 50,
+        spacingRight: 50,
+        spacingTop: 50,
+
+        backgroundColor: {
+                linearGradient: [0, 0, 250, 500],
                 stops: [
-                    [0, '#EDDDC7'],
-                    [1, '#EDEBE1']
+                    [0, '#FAEDDC'],
+                    [1, '#F0E5DF']
                 ]
         },
-   borderColor: '#191963',
-   borderWidth: 4.5,
-        type: 'area',
+        borderColor: '#191963',
+        borderWidth: 4.5,
         zoomType: 'x'
       },
       title: {
-        text: '<%= @hall.name %>'
+        text: '<%= @hall.name %>',
+        style: {
+            color: '#344178',
+            fontSize: '20px'
+        }
       },
       tooltip: {
-   crosshairs: true
+         crosshairs: true
       },
       xAxis: {
-        type: 'datetime'    // Tells highcharts to interpolate the data using the date
+        type: 'datetime',    // Tells highcharts to interpolate the data using the date
+        title: {
+           text: 'Date/Time',
+           style: {
+             fontSize: '20px'
+           }
+        }
       },
       yAxis: {
         title: {
-          text: 'Electricity (kW)'
-        }
+          text: 'Electricity (kW)',
+          style: {
+             fontSize: '20px'
+          }
+        },
+        gridLineWidth: 2
       },
       legend: {
         enabled: false
       },
       plotOptions: {
+        series: {
+          fillOpacity: 0.4,
+
+        },
         area: {
           marker: {
             enabled: false
           },
-     dashStyle: 'Solid',
-          fillColor: {
-            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 2.5 },
-            stops: [
-              [0, '#191963'],
-              [1, '#FFFFFF']
-            ]
-          },
+          dashStyle: 'Solid',
           lineWidth: 1
         }
       },
       series: [{
         name: 'kW',
-        color: '#191963',
+        lineWidth: 2.5,
+        color: '#22366E',
         data: (<%=raw @data %>).Readings }]    // Array of data points to render
                     // Because we are using datetime, each point should be an array of the form:
                     // [timestamp, yValue], where timestamp is in UTC format
