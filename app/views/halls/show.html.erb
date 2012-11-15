@@ -20,7 +20,6 @@
     </div>
 
     <br>
-    <br>
 
     <!-- End header -->
 
@@ -97,7 +96,7 @@
   #content { padding: 25px; }
   .content-page { margin: 0 auto; }
 
-  #graphContainer { margin-left: auto; margin-right:auto; width: 1000px}
+  #graphContainer { overflow: hidden}
   #intervalControls { width: 315px; height: 45px; text-align:center; margin: 0 auto;}
   #intervalControls ul { margin: 5px auto; width: 266px; }
 
@@ -123,8 +122,7 @@
       chart: {
         renderTo: 'graphContainer',   // The element to render the chart intono
         type: 'area',
-        height: 500,
-        width: 1000,
+        height: 400,
         spacingLeft: 50,
         spacingRight: 50,
         spacingTop: 50,
@@ -137,8 +135,7 @@
                 ]
         },
         borderColor: '#191963',
-        borderWidth: 4.5,
-        zoomType: 'x'
+        borderWidth: 4.5
       },
       title: {
         text: '<%= @hall.name %>',
