@@ -1,0 +1,16 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div data-role="dialog">
+      <div data-role="header" data-theme="b"><h1>Alert Us!</h1></div>
+      <div data-role="content" data-theme="b">
+        <h4>
+          Alert us if you see an abnormal trend in energy use.<br />
+        </h4>
+        <p>An email will be sent to the administrators.</p>
+        <%= link_to 'OK', {:controller=>"emailer", :action =>"submit_flag", :id=>@hall.id}, {"data-theme"=>"a", "data-ajax"=>"false", "class"=>"ui-btn-right"}%>
+      </div>
+    </div>
+  </body>
+</html>
