@@ -264,14 +264,14 @@ if Hall.where(:id => 4).empty?
   Hall.create(:id => 4, :name => "Soda Hall").save
 end
 
-Category_general = Category.find_by_name("General")
+Category_general = Category.find_by_name("Top Tips")
 Category_office = Category.find_by_name("Office")
 Category_lab = Category.find_by_name("Lab")
 Category_reshall = Category.find_by_name("Residence Hall")
 
 
 if(Category_general == nil)
-  Category_general = Category.create(:name=>"Generalz")
+  Category_general = Category.create(:name=>"Top Tips")
 end
 if(Category_office == nil)
   Category_office = Category.create(:name=>"Office")
