@@ -283,6 +283,17 @@ if(Category_reshall == nil)
   Category_reshall = Category.create(:name=>"Residence Hall")
 end
 
+homeText = Array[
+Introduction.create(:title=>"Welcome", :content=>"Welcome to the energy dashboard at UC Berkeley!  This dashboard is part of UC Berkeley’s Energy Management program, a comprehensive program aimed at permanently reducing the amount of energy the campus uses.  It empowers faculty, staff, and students to take smart, simple energy savings measures that will improve our environmental footprint and save the campus money ─ returning those funds to teaching and research. Learn more at myPower.berkeley.edu"),
+Introduction.create(:title=>"How is it used?", :content=>"The dashboard lets you see the real-time effects of your energy savings measures such as turning off the lights at night, lowering the heat by a degree, or other similar actions. You will be able to see the cumulative impact of your behavior and of others in your building, proving that small actions can add up to a large impact.  Everyone has a role in the campus energy conservation effort."),
+Introduction.create(:title=>"How does it work?", :content=>"A hardware connector in each facility communicates with the building's energy metering system and sends the data to software engine. The software tracks the exact amount of energy being consumed at any given moment, analyzes it, and communicates it to you in real-time via this dashboard.
+
+In an effort to reduce greenhouse gas emissions and save money on operations, occupants are being given access to this innovative software tool powered by Pulse Energy.  Please check out the dashboard and feel free to post feedback or any suggestions you have for making it more useful to you.")
+]
+
+
+
+
 generalTips = Array[
 Tip.create(:title=>"Turn off what you\'re not using", :content=>"Monitors and lights when you\'re away for more than 15 minutes"),
 Tip.create(:title=>"Turn off what you\'re not using", :content=>"Overhead lights when not needed, including in common areas"),
