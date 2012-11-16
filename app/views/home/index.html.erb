@@ -30,9 +30,18 @@
 	    
 	    <div data-role="collapsible" data-theme="c" data-content-theme="c" id="energyTip">
 	      <h3>Energy Tip of the Day</h3>
-        <p><h4><%= @tip_of_the_day.title %></h4><%= @tip_of_the_day.content %></p>
+    	      <p><h4><%= @tip_of_the_day.title %></h4><%= @tip_of_the_day.content %></p>
 	    </div>
 	    
+	    <ul data-role="listview" data-theme="c" data-inset="true">
+		<% @homeText.each do |title, content| %>
+ 		   <li>
+			<h3><%=title%></h3>
+                        <p><%=raw content%></p>
+		   </li>
+   		<% end %>
+	    </ul>
+
 	    <ul data-role="listview" data-theme="c" data-inset="true">
 	      <li><a href="/halls">Buildings</a></li>
               <li><a href="/tips">Tips</a></li>

@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   
   def index
     @tip_of_the_day = Tip.tip_of_the_day
+   # @homeText = Introduction.get_all
   end
 end

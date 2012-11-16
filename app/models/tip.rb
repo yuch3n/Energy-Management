@@ -9,6 +9,7 @@ class Tip < ActiveRecord::Base
     # Build up the possible categories
     Tip.all.each do |tip|
       tip.categories.each do |category|
+	puts "**********************"
         @categories[category.name] = [] unless @categories[category.name]
         @categories[category.name].push(tip)
       end
@@ -17,7 +18,7 @@ class Tip < ActiveRecord::Base
   end
 
   def self.general_tips
-    self.tips_by_categories["General"]
+    self.tips_by_categories["Top Tips"]
   end
 
   def self.tip_of_the_day
