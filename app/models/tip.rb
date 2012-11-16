@@ -17,7 +17,7 @@ class Tip < ActiveRecord::Base
   end
 
   def self.general_tips
-    self.tips_by_categories["General"]
+    self.tips_by_categories["Top Tips"]
   end
 
   def self.tip_of_the_day
