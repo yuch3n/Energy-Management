@@ -9,7 +9,7 @@
 </style>
 <div id="feedback-form">
 		<%= form_tag "emailer/submit_feedback" do -%>
-			<h2>Please enter your feedback:</h2>
+			<h2>What would you like to tell us?</h2>
 			<%= text_area_tag 'message'%>
 			<%= hidden_field_tag 'return_addr', @return_to %>
 			<button id="cancel-button" type="button" value="Cancel" onClick="history.back();" >Cancel</button>
