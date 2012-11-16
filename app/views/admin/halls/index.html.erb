@@ -8,14 +8,12 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Stream ID</th>
     </tr>
   </thead>
   <tbody>
   <% @halls.each do |hall| %>
   <tr>
     <td><%= link_to hall.name, edit_admin_hall_path(hall)%></td>
-    <td><%= hall.streamid%></td>
   </tr>
   <% end %>
   </tbody>

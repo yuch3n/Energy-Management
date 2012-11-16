@@ -3,9 +3,6 @@
 <%= form_tag admin_halls_path, :method => 'post' do %>
   <%= label_tag :name, 'Name' %>
   <%= text_field(:hall, :name) %>
-  
-  <%= label_tag :streamid, 'Id' %>
-  <%= text_field(:hall, :streamid) %>
 
   <%= label_tag :features, 'Features' %>
   <% @features.each do |feature| %>

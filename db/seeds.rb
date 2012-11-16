@@ -271,7 +271,7 @@ Category_reshall = Category.find_by_name("Residence Hall")
 
 
 if(Category_general == nil)
-  Category_general = Category.create(:name=>"General")
+  Category_general = Category.create(:name=>"Generalz")
 end
 if(Category_office == nil)
   Category_office = Category.create(:name=>"Office")
