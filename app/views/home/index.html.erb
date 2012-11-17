@@ -33,11 +33,11 @@
     	      <p><h4><%= @tip_of_the_day.title %></h4><%= @tip_of_the_day.content %></p>
 	    </div>
 	    
-	    <ul data-role="listview" data-theme="c" data-inset="true">
-		<% @homeText.each do |title, content| %>
+            <ul data-role="listview" data-theme="e" data-content-theme ="c" data-inset="true">
+		<% @homeText.each do |intro| %>
  		   <li>
-			<h3><%=title%></h3>
-                        <p><%=raw content%></p>
+	                <h3><%=intro.title%></h3>
+              	        <p><%=raw intro.content%></p>
 		   </li>
    		<% end %>
 	    </ul>

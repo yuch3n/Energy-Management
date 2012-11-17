@@ -9,7 +9,6 @@ class Tip < ActiveRecord::Base
     # Build up the possible categories
     Tip.all.each do |tip|
       tip.categories.each do |category|
-	puts "**********************"
         @categories[category.name] = [] unless @categories[category.name]
         @categories[category.name].push(tip)
       end

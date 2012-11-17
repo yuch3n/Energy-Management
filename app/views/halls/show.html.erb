@@ -10,6 +10,7 @@
   }
 </style>
 <% end %>
+
 <!-- Begin Graph Tab -->
 <div class="contentPage" id="graphContent" data-role="page">
     <!-- Begin header -->
@@ -32,10 +33,22 @@
     </div>
 
     <br>
-    <div id="graphContainer"> </div>    
-    <br>
-
-
+    <div data-role="content">
+    	<div id="graphContainer"> </div>    
+    
+       <ul data-role="listview" data-theme="e" data-inset="true">
+	   <li>
+              <h3>Background</h3>
+	      <p><%=raw @hall.background %></p>
+	   </li>
+	   <% if @hall.energy_info != nil%>
+       	    <li>
+	      <h3>Energy Info</h3>
+	      <p><%=raw @hall.energy_info %></p>
+            </li>
+	   <% end %>
+       </ul>
+    </div>
 
     <!-- Begin footer -->
     <div id="footer-holder" data-role="footer" class="ui-body-b" data-position="fixed">
