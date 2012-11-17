@@ -10,5 +10,5 @@ Background:
 Scenario: User sends an alert to the administrator after seeing an energy use anomaly.
   When I follow "Shofix"
   Then I should be on "/halls/1"
-  When I follow "Report Anomaly"
+  When I follow "Alert Us"
   Then I should see "An alert has been sent to the administrator"

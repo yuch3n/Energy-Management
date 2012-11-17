@@ -7,7 +7,7 @@ Feature: Users see a new green tip each day
 Background:
   Given the following categories exist:
     | id | name                |
-    | 1  | General             |
+    | 1  | Top Tips            |
     | 2  | Lab                 |
     
 	Given the following tips exist:
