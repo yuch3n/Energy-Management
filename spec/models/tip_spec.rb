@@ -78,7 +78,7 @@ end
 describe Tip do
   describe 'tip of the day is correct' do
     before :each do
-      @general_category = FactoryGirl.create(:category, { :name => 'General' })
+      @general_category = FactoryGirl.create(:category, { :name => 'Top Tips' })
       @lab_category = FactoryGirl.create(:category, { :name => 'Lab' })
       @tip = FactoryGirl.create(:tip, { :title => 'This is a tip', :content => 'Turn off all the things!', :categories => [@general_category] })
       @other_tip = FactoryGirl.create(:tip, { :title => 'Problem solved!', :content => 'Drop an ice cube in the ocean every now and then', :categories => [@general_category] })
