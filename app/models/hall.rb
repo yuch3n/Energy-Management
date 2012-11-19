@@ -36,7 +36,15 @@ class Hall < ActiveRecord::Base
 
  def getquery(starttime, endtime)
     streamlimit = 1000
-    "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where (Metadata/Extra/ChannelName = 'kW demand' or Metadata/Extra/ChannelName = 'kW td' or
+
+    if(self.name == "Davis Hall" || self.name == "Giannini Hall" || self.name == "Haviland Hall" || self.name == "Stanley Hall" || self.name == "Sproul Hall" || self.name == "Wellman Hall")
+     "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where Properties/UnitofMeasure = 'kW'
+								 	   and Metadata/Location/Building = '#{self.name}' 
+									   and not Metadata/Extra/Operator like 'sum%'"
+    else
+    "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where (Metadata/Extra/ChannelName = 'kW demand' or 
+										 Metadata/Extra/ChannelName = 'kW td' or
+										 Metadata/Extra/ChannelName = 'West Elec Meter Demand' or
                                                                                  Metadata/Extra/ChannelName = 'Watts, 3-Ph total' or
                                                                                  Metadata/Extra/ChannelName = 'BARROWS MAIN ELECTRIC Demand' or
                                                                                  Metadata/Extra/ChannelName = 'BARROWS MAIN ELECTRIC Demand' or
@@ -49,6 +57,8 @@ class Hall < ActiveRecord::Base
                                                                                  Metadata/Extra/ChannelName = '225 KVA Xfmr - Panel LNDB-2 Demand' or
                                                                                  Metadata/Extra/ChannelName = 'U Hall Rm 33B kWH meter Demand' or
                                                                                  Metadata/Extra/ChannelName = 'Wurster Main Electric Instantaneous' or
+										 Metadata/Extra/ChannelName = 'Electric MB01 Demand' or
+								    	         Metadata/Extra/ChannelName = 'Electric MB02 Demand' or
                                                                                  uuid = '22109bd7-06d9-58a0-902f-2a5ed92f92e1' or
                                                                                  uuid = 'bc3a93bc-9bdd-5c59-aa6e-63f7060b9d58' or
                                                                                  uuid = '0545cbe9-26b4-5fb8-983b-cfe336b7b8af' or
@@ -56,6 +66,8 @@ class Hall < ActiveRecord::Base
                                                                                  uuid = '19edb822-eccb-5289-8fee-a39cdda66cd5' or
                                                                                  uuid = '1bf52ff9-2034-5fef-91b0-8b6cc7855f00')
                                                                                  and Metadata/Location/Building = '#{self.name}' and not Metadata/Extra/Operator like 'sum%'"
+
+    end
 
 
  end
