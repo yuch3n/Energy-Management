@@ -29,6 +29,9 @@ Bechtel_Center.green_features = [power, climate]
 Birge_Hall = Hall.create(:name=>"Birge Hall", :background=>"Birge Hall primarily houses the Department of Physics, and is joined by glass-walled passageways to Le Conte Hall.  Designed by John Warnecke, it replaced Bacon Hall (1881), formerly the university’s elegant library and art gallery. It is named for Raymond T. Birge, a Professor of Physics and Department Chair.")
 Birge_Hall.green_features = [climate, power, strategic]
 
+BoaltSimon = Hall.create(:name=>"Boalt and Simon Hall", :background=>"Boalt Hall is part of the Berkeley Law complex, which includes Simon Hall and the recently completed Law Infill building.  It is named in memory of Judge John Henry Boalt, whose wife Elizabeth Joyce Boalt, along with 40 state lawyers and judges contributed to make it the 'best law school west of the Rockies'.")
+BoaltSimon.green_features = [power, strategic, climate, green_buildings]
+
 Cali_Hall = Hall.create(:name=>"California Hall", :background=>"Located in central campus, Cal Hall is the main campus administration building, housing the Chancellor’s office and other top University administration offices. Designed in the Beaux Arts Style by John Galen Howard and built in 1905, it was added to the National Register of Historic Places in 1982.")
 Cali_Hall.green_features = [green_departments, power, climate]
 
@@ -38,10 +41,12 @@ Cali_Hall.green_features = [green_departments, power, climate]
 Chavez_Center = Hall.create(:name=>"Chavez Center", :background=>"This campus hot spot for students was once a dining commons and lounge and later renovated in 1990 to house various student services, including student advising, resources and services, Center for Transfer, Re-entry & Student Parents, student arts organizations, and The Golden Bear Café. Built in 1960, it is named in honor of Cesar Chavez, the charismatic founding president of the farm workers’ union.")
 Chavez_Center.green_features = [power, climate]
 
-Cory_Hall = Hall.create(:name=>"Cory Hall New (as of 1/12/12)", :background=>"Cory Hall is home to Electrical Engineering and Computer Sciences. The building houses labs devoted to integrated circuits, lasers, and robotics. Cory had a fifth floor added in 1985, the exterior of which features a computer chip inspired design motif.  It is named for Clarence L. Cory, Dean of the College of Mechanics and a faculty member for almost 40 years.")
+Cory_Hall = Hall.create(:name=>"Cory Hall", :background=>"Cory Hall is home to Electrical Engineering and Computer Sciences. The building houses labs devoted to integrated circuits, lasers, and robotics. Cory had a fifth floor added in 1985, the exterior of which features a computer chip inspired design motif.  It is named for Clarence L. Cory, Dean of the College of Mechanics and a faculty member for almost 40 years.")
 Cory_Hall.green_features = [power, strategic, climate]
 
-# Hall.create(:name=>"Davis Hall")
+Davis = Hall.create(:name=>"Davis Hall", :background=>"Davis Hall houses the offices of the Department of Civil and Environmental Engineering, including its structural and earthquake engineering labs and teaching facilities. The building has a double-height space used for testing many types of materials and designs, from scale models of California highway overpasses to segments of the Golden Gate  Bridge. It is named for Professor Raymond Davis, who was a faculty member for 50 years and developed the Engineering Materials Laboratory into one of the world’s finest.")
+Davis.green_features = [climate, power]
+
 # Hall.create(:name=>"Doe Addition")
 
 Doe_Annex = Hall.create(:name=>"Doe Annex", :background=>"Built in 1949, Bancroft Library is home to many of the University Library’s special collections, including of the largest collection of Western Americana. The library was founded with Hubert Howe Bancroft’s 19th century gift of his extensive library of California and Western history. The Bancroft Library also includes the Mark Twain Papers, the Regional Oral History Office, the University of California Archives, and other collections and artifacts. The building recently underwent a major seismic upgrade and renovation - its interior is one of the campus’s most beautiful spaces.")
@@ -65,6 +70,10 @@ East.green_features = [power, climate]
 # Hall.create(:name=>"Eshleman Hall")
 
 # Hall.create(:name=>"Evans Field")
+
+Etch = Hall.create(:name=>"Etcheverry Hall", :background=>"Etcheverry is home to the Departments of Mechanical, Nuclear and Industrial Engineering. It once held a functioning nuclear reactor in its basement and a research wind tunnel, both which are now dismantled. It is named for Bernard Etcheverry, Professor of drainage and irrigation and Chair of the Department for nearly three decades.")
+Etch.green_features = [power, climate]
+
 Evans = Hall.create(:name=>"Evans Hall", :background=>"Built in 1971, Evans is a ten-story building in the northeast part of campus, just east of Memorial Glade. Originally home to much of the computer infrastructure on campus, it now houses the Departments of Economics, Mathematics, and Statistics, and College of Letter and Sciences Advising. It is named for Griffith Evans, the Chair of the Math Department from 1934-1949.", :energy_info=>"During a lighting audit conducted in spring 2008, auditors were able to find almost 1,700 light fixtures that could be retrofitted throughout its ten floors. Many of these light fixture problems can be remedied by installing more energy efficient bulbs. This can be fluorescent, LED, or a lower wattage bulb for areas that do not need large amounts of light. Some other recommendations encouraged by the energy auditors were: <br> <br>
 Increased usage of power strips to prevent phantom loads.Using task lighting when possible also has a large effect on energy consumption. <br> <br>
 Hallways could use a reduction in total lighting but still be well lit; motion sensors would also be helpful. <br> <br>
@@ -76,7 +85,9 @@ Gardner = Hall.create(:name=>"Gardner Stacks", :background=>"The Gardner Stacks 
 Gardner.green_features = [climate, power]
 
 # Hall.create(:name=>"Giannini")
-# Hall.create(:name=>"Giannini Hall")
+Giannini = Hall.create(:name=>"Giannini Hall", :background=>"Giannini is home to the College of Natural Resources including Agricultural & Resource Economics, and Environmental Science, Policy & Management. This building was named for benefactor Amadeo Peter Giannini, founded of the Bank of Italy (which eventually became the Bank of America). The light-splashed entry hall and grand split staircase are filled with Art Deco details. It was added to the National Register of Historic Places in 1982.")
+Giannini.green_features = [climate, power]
+
 # Hall.create(:name=>"Giauque")
 # Hall.create(:name=>"Gill Tract")
 # Hall.create(:name=>"Gilman")
@@ -97,7 +108,9 @@ Hargrove.green_features = [power, climate]
 
 # Hall.create(:name=>"Harmon Gym")
 # Hall.create(:name=>"Haviland")
-# Hall.create(:name=>"Haviland Hall")
+Haviland = Hall.create(:name=>"Haviland Hall", :background=>"Haviland Hall is home to the Schools of Social Welfare and Public Health. The building was designed by John Galen Howard and named in honor of San Francisco banker J.T.H. Haviland, whose wife donated the funds for the building. It was added to the National Register of Historic Places in 1982.")
+Haviland.green_features = [power, climate]
+
 # Hall.create(:name=>"Hearst Annex")
 Hearst = Hall.create(:name=>"Hearst Gym", :background=>"Designed by celebrated local architects Bernard Maybeck and Julia Morgan, Hearst Memorial Gym has large and small gymnasiums and outdoor swimming pools. The building is home to the Department of Physical Education and ROTC. It was added to the National Register of Historic Places in 1982.")
 Hearst.green_features = [climate, power]
@@ -118,7 +131,7 @@ Hilgrad.green_features = [climate, strategic, power]
 
 King = Hall.create(:name=>"King Union Bldg")
 # Hall.create(:name=>"Kleeburger")
-Kosh = Hall.create(:name=>"Koshland New (as of 3/9/11)", :background=>"Koshland is a research laboratory building and home to the Departments of Plant and Microbial Biology and Molecular and Cell Biology. Built in 1990, Koshland is named for Daniel Koshland, a Berkeley alumnus and Biochemistry Professor.")
+Kosh = Hall.create(:name=>"Koshland", :background=>"Koshland is a research laboratory building and home to the Departments of Plant and Microbial Biology and Molecular and Cell Biology. Built in 1990, Koshland is named for Daniel Koshland, a Berkeley alumnus and Biochemistry Professor.")
 Kosh.green_features = [climate, power, strategic]
 
 Krober = Hall.create(:name=>"Kroeber Hall", :background=>"Named for Anthropology Professor, Kroeber Hall houses the Phoebe Hearst Museum of Anthropology and the Worth Ryder Art Gallery, in addition to classroom and office space.")
@@ -141,8 +154,11 @@ LeCunt.green_features = [strategic, climate, power]
 Lewis = Hall.create(:name=>"Lewis Hall", :background=>"The building was built as part of the post-WWII expansion to accommodate the surge of faculty and students. It houses Chemistry and was named for Gilbert Lewis, Dean of the College of Chemistry from 1912-41.")
 Lewis.green_features = [climate, power]
 
+Shing = Hall.create(:name=>"Li Ka Shing", :background=>"The Li Ka Shing Center for Biomedical and Health Sciences, named for global entrepreneur and philanthropist Li Ka-Shing, is the anchor for a quadrangle of research and teaching buildings dedicated to the biomedical and health sciences.  It houses more than 450 researchers and features flexible, open labs shared by multiple investigators to facilitate collaboration, as well as the Henry H. Wheeler Jr. Brain Imaging Center, the Berkeley Stem Cell Center and the Henry Wheeler Center for Emerging and Neglected Diseases.  Its sustainable environmental design has been recognized with a LEEDTM Gold certification and a California Higher Education Energy Efficiency Best Practice Award for its HVAC design.")
+Shing.green_features = [climate, power]
+
 #Hall.create(:name=>"Life Science")
-LSA = Hall.create(:name=>"LSA New (as of 7/22/10)", :background=>"The six-story Life Sciences Addition was part of a major campus drive to improve facilities for biology studies. Located adjacent to the Valley Life Sciences Building it houses 46 laboratory suites for advanced biological research.")
+LSA = Hall.create(:name=>"LSA", :background=>"The six-story Life Sciences Addition was part of a major campus drive to improve facilities for biology studies. Located adjacent to the Valley Life Sciences Building it houses 46 laboratory suites for advanced biological research.")
 LSA.green_features = [power, climate, strategic]
 
 # Hall.create(:name=>"LSB")
@@ -197,15 +213,20 @@ Mulford.green_features = [green_departments, climate, power]
 Oxford_Tract = Hall.create(:name=>"SRB1 and Oxford Tract", :background=>"Adjacent to Warren Hall, Oxford Tract is a research complex for the Department of Plant and Microbial Biology. The complex consists of greenhouses, gardens, and research laboratories.")
 Oxford_Tract.green_features = [power, climate]
 
-Silver = Hall.create(:name=>"Silver Addition New (as of 1/12/12)", :background=>"The Silver Space Sciences Lab Addition is a five-story research lab building and is one of the buildings in the Space Sciences Lab campus on the hill above the campus core.")
+Silver = Hall.create(:name=>"Silver Addition", :background=>"The Silver Space Sciences Lab Addition is a five-story research lab building and is one of the buildings in the Space Sciences Lab campus on the hill above the campus core.")
 Silver.green_features = [power, climate]
 
 Soda = Hall.create(:name=>"Soda Hall New (as of 1/12/12)", :background=>"Soda Hall is home of the Computer Sciences Department and has advanced networking, wireless capabilities, and access to computer clusters for shared computer power, storage and services. Built in 1994, the building is named in honor of Y. Charles and Helen Soda for their commitment to education in the Bay Area.")
 Soda.green_features = [power, climate, strategic]
 
 #Hall.create(:name=>"South")
-#Hall.create(:name=>"Sproul")
-#Hall.create(:name=>"Stanley")
+Sproul = Hall.create(:name=>"Sproul Hall", :background=>"This neoclassical building houses the Office of Financial Aid, Registrar, Visitors  Center, Graduate Division, Admissions, and UC Police Department. The combination of a stairway that can be used as a large raised platform is often the site of public performances and demonstrations. It is named for Robert Gordon Sproul, the first Berkeley alumnus and native Californian to serve as University President.", :energy_info=>"During fall of 2012, a plug load audit was performed. This audit used kill-a-watt meters to find where much of the buildings power was going. A major result of this audit was the realization that printers, even when not in use, use a lot of electricity. While more than half of the printers audited were Energy Star there were still many more that could be replaced. The auditors recommended consolidating printers and turning them all off at night. Education campaigns about environmental benefits and economic benefits would also help people to adopt additional sustainable behaviors.")
+Sproul.green_features = [green_departments, climate, power]
+
+Stanley = Hall.create(:name=>"Stanley Hall", :background=>"Stanley Hall is a state-of-the-art research laboratory and the Berkeley headquarters for the California Institute for Quantitative Biosciences (QB3), which supports interdisciplinary teaching and research as part of the campus’ Health Science Initiative. Built in 2007, Stanley Hall replaced the original 1952 structure which was demolished in 2003. The building is named for biochemist and virologist Wendell M. Stanley, one of Berkeley’s first Nobel laureates.", :energy_info=>"A lighting audit was performed in Stanley Hall during the fall of 2009. The audit was performed in public spaces in all 11 floors. Overall Stanley Hall has efficient lighting. However, many parts of the building are over-lit. Due to fire code, many parts of the building require light fixtures even though natural lighting is sufficient. The auditors recommend getting in touch with fire marshals to make sure the building is operating sustainably while still being safe. Some other recommendations would be motion sensor lights in areas that don’t need to stay lit around the clock. Auditors recommended tabling as a way to encourage people to be more energy efficient.")
+Stanley.green_features = [climate, power, strategic]
+
+
 #Hall.create(:name=>"Std Press Box")
 St = Hall.create(:name=>"Stephens Hall", :background=>"The building is home to International & Area Studies, Ethnic Studies, Middle Eastern Studies, South Asian Studies, African Studies, Asian Studies, Peace & Conflict Studies, Office for History of Science and Technology, Townsend Center for the Humanities, and the Academic Senate. It is named for Henry M. Stephens, a Professor and student adviser.")
 St.green_features = [power, climate]
@@ -215,7 +236,7 @@ St.green_features = [power, climate]
 Tang = Hall.create(:name=>"Tang Center", :background=>"The Tang Center is home to the University Health Services, which provides services such as acute care, radiology, a pharmacy, optometry clinic, and counseling. A major gift from Hong Kong businessman Jack C.C. Tang, whose two daughters graduated from Berkeley, helped fund this center for student health care.")
 Tang.green_features = [power, green_departments, climate, strategic]
 
-Tan = Hall.create(:name=>"Tan Hall New (as of 1/12/12)", :background=>"Tan Hall is an 118,000 square foot research facility for the College  of Chemistry. The building contains research and teaching laboratories, a lecture hall, staff offices, and a seminar room for students and faculty. It is named in honor of Tan Kah Kee, a pioneering industrialist and philanthropist in China and Singapore.")
+Tan = Hall.create(:name=>"Tan Hall", :background=>"Tan Hall is an 118,000 square foot research facility for the College  of Chemistry. The building contains research and teaching laboratories, a lecture hall, staff offices, and a seminar room for students and faculty. It is named in honor of Tan Kah Kee, a pioneering industrialist and philanthropist in China and Singapore.")
 Tan.green_features = [climate, power]
 
 Tol = Hall.create(:name=>"Tolman Hall", :background=>"Tolman Hall is home to the School of Education, Department of Psychology and Institute for Human Development. Its mid-20th century modernist look was inspired by the work of famed architect Le Corbusier and features a signature suspended breezeway and molded concrete decorations. It is named in honor of psychologist Edward Chace Tolman.")
@@ -224,9 +245,9 @@ Tol.green_features = [climate, power]
 #Hall.create(:name=>"Tolman Sub")
 #Hall.create(:name=>"Union")
 #Hall.create(:name=>"Univ Art Ctr")
-Univer = Hall.create(:name=>"University Hall", :background=>"University Hall - This seven-story tower houses Public Health, Environmental Health & Safety, and various administrative units.  The building originally house the UC Office of the President before the headquarters were moved to Oakland.", :energy_info=>"A lighting audit was done in University Hall in the spring of 2008. This audit identified over 200 fixtures that needed to be retrofitted. After the audit, auditors recommended light stickers reminding people to turn off lights to be installed. Competitions such as a take the stairs challenge could help spur energy savings. The building is over lit so a general reduction of lamps would help, as well as distributing more energy efficient light bulbs. <br> <br>
+Univer = Hall.create(:name=>"University Hall", :background=>"This seven-story tower houses Public Health, Environmental Health & Safety, and various administrative units.  The building originally house the UC Office of the President before the headquarters were moved to Oakland.", :energy_info=>"A lighting audit was done in University Hall in the spring of 2008. This audit identified over 200 fixtures that needed to be retrofitted. After the audit, auditors recommended light stickers reminding people to turn off lights to be installed. Competitions such as a take the stairs challenge could help spur energy savings. The building is over lit so a general reduction of lamps would help, as well as distributing more energy efficient light bulbs. <br> <br>
 In fall of 2009 a green coffee hour was hosted to encourage sustainable behaviors and lifestyles. Continued education about phantom loads and the impacts of behavioral changes are recommended for long-term adoption of sustainable practices.")
-Univer.green_features = [climate, strategic]
+Univer.green_features = [power, climate, strategic, green_buildings, green_departments]
 
 #Hall.create(:name=>"University Sb")
 VL = Hall.create(:name=>"Valley Life Sciences", :background=>"The Life Sciences Building  is over 400,000 square feet, housing research and instructional laboratories for Departments of Integrative Biology, Molecular and Cell Biology, Environmental Science Policy and Management, and Anthropology and Nutritional Sciences. It is also home to several world-class research museums: Museum of Paleontology, Museum of Vertebrate   Zoology, and the University & Jepson Herbaria. In the early 1990s, it underwent a major building renovation and was renamed for two major contributors, Wayne and Gladys Valley.", :energy_info=>"In the spring of 2008, a lighting audit was performed in all public areas and found that many bulbs could be replaced with more efficient ones. Some recommendations given are: <br> <br>
@@ -237,7 +258,9 @@ VL.green_features = [strategic, power, climate]
 
 #Hall.create(:name=>"Warren Hall/Oxford Tract")
 #Hall.create(:name=>"Wellman Ctyd")
-#Hall.create(:name=>"Wellman Hall")
+Wellman = Hall.create(:name=>"Wellman Hall", :background=>"Housing Environmental Science, Policy & Management and the Essig Museum of Entomology Wellman Hall is part of the trio of buildings that were the core of agricultural studies. Its original name was Agriculture Hall but was renamed for Harry Wellman, Professor of Agricultural Economics and acting University President in 1967. Designed by John Galen Howard in the Beaux Arts style, it was added to the National Register of Historic Places in 1982.")
+Wellman.green_features = [power, climate]
+
 Wheel = Hall.create(:name=>"Wheeler Hall", :background=>"Wheeler Hall is home classrooms and to Wheeler Auditorium - one of the largest on campus, often used as a lecture hall for  undergraduate classes. The building is named for Benjamin Ide Wheeler, the University President during Berkeley’s “golden years” from 1899-1919. It was added to the National Register of Historic Places in 1982.")
 Wheel.green_features = [power, climate, strategic]
 
