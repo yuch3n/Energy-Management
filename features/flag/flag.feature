@@ -11,4 +11,13 @@ Scenario: User sends an alert to the administrator after seeing an energy use an
   When I follow "Shofix"
   Then I should be on "/halls/1"
   When I follow "Alert Us"
+  And I follow "OK"
   Then I should see "An alert has been sent to the administrator"
+
+@javascript
+Scenario: User can cancel out after clicking alert us
+  When I follow "Shofix"
+  Then I should be on "/halls/1"
+  When I follow "Alert Us"
+  And I follow "Cancel"
+  Then I should not see "An alert has been sent to the administrator"
