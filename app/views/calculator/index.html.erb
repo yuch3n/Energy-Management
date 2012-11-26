@@ -1,0 +1,66 @@
+<div data-role="header" data-position="fixed" data-theme="b" style="left: -30px; padding-right: 60px;">
+  <a href="#" data-role="button" data-rel="back" data-theme="a">Back</a>
+  <h1>Energy Calculator</h1>
+</div>
+
+<div data-role="content">
+
+<style>
+	#kwh{
+		width: 6em;
+		text-align:center;
+		display:inline;
+	}
+	#feedback-widget{
+		display: none;
+	}
+	#calculator{
+		text-align:center;
+	}
+	#measure{
+		display:inline;
+		width:70%;
+	}
+	#amt{
+		width: 6em;
+		display:inline;
+	}
+</style>
+<div id="calculator">
+		<%= form_tag "/emailer/submit_feedback" do -%>
+			<h2>Select a practical measurement to convert kilowatt hours into:</h2>
+			<input type="text" id="kwh" value="0"> kWh
+			<br/>
+			<br/>
+			is equivalent to
+			<br/>
+			<br/>
+			<p id="amt"><b>0 hours</b></p>
+			<br/>
+			<br/>
+			<select id="measure">
+			  <option value="lightbulb">running a 100-Watt light bulb</option>
+			  <option value="energySavingLB">running a 23-Watt energy saving light bulb</option>
+			  <option value="blender">running a blender</option>
+			  <option value="washingMachine">in a washing machine</option>
+			  <option value="tv">watching a 40" LCD T.V.</option>
+			  <option value="gasoline">gallons of gasoline</option>
+			</select>
+			</br>
+			<button id="calculate-button" type="button" value="Calculate" onClick="calculate();" >Calculate</button>
+	<% end -%>
+</div>
+
+<script type="text/javascript">
+	var conversionRate = {"lightbulb": .1, "blender": .4, "washingMachine": .25, "energySavingLB": .023, "tv": .08, "gasoline": 33.7};
+	var units = {"lightbulb": "hours", "blender": "hours", "washingMachine": "loads", "energySavingLB": "hours", "tv": "hours", "gasoline": ""};
+	function calculate(){
+	  var newAmt = $('#kwh').val() * (1 / conversionRate[$('#measure').val()]);
+	  newAmt = Math.round(newAmt*100)/100;
+	  var newUnits = units[$('#measure').val()];
+		$('#amt').html("<b>" + newAmt + " " + newUnits + "</b>");
+	}
+</script>
+
+</div>
+

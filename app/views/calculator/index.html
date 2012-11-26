@@ -1,0 +1,45 @@
+<div data-role="header" data-position="fixed" data-theme="b" style="left: -30px; padding-right: 60px;">
+  <a href="#" data-role="button" data-rel="back" data-theme="a">Back</a>
+  <h1>Green Energy Tips</h1>
+</div>
+
+<div data-role="content">
+
+  <% @categories.each do |category, tips| %>
+    <div data-role="collapsible" data-theme="b" data-content-theme="c">
+      <h3 class="Category_<%= category %>"><%=category%></h3>
+      <ul data-role="listview" data-theme="c" data-inset="true">
+	  <% @subcats = tips.group_by(&:title) %>
+  
+	  <% @subcats.each do |subcat, tips| %>
+	    <li>
+			<h3><%=subcat%></h3>	
+			<% tips.each do |tip| %>
+				<p><%=raw tip.content%></p>
+			<% end %>
+	   </li>
+	  <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+</div>
+
+<script type="text/javascript">
+  $(document).bind('pageinit', function () {
+    var initialized = false;
+    if (!initialized) {
+      $('div.ui-collapsible').bind('click', function () {
+        $(this).attr('value', $(this).hasClass('ui-collapsible-collapsed') ? 'closed' : 'open');
+      });
+      initialized = true;
+    }
+  });
+</script>
+
+<style type="text/css">
+  .ui-listview li { font-weight: normal; font-size: 12px; white-space: normal; overflow: visible; }
+  .ui-listview li h3 { font-size: 14px; margin-top: 20px; margin-bottom: 5px; }
+  .ui-listview li h3.ui-li-heading:first-child { font-size: 16px; margin-top: 10px; }
+</style>
+

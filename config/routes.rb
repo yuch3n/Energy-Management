@@ -6,6 +6,7 @@ EnegeryManagement::Application.routes.draw do
 
   resources :admin, :only => [:index]
   resources :tips, :only => [:index]
+  resources :calculator, :only => [:index]
   match 'feedback/submit_form', :controller => 'feedback', :action => 'submit_form'
   match 'feedback/emailer/submit_feedback', :controller => 'emailer', :action => 'submit_feedback'
   match 'emailer/submit_flag/:id', :controller => 'emailer', :action => 'submit_flag'
