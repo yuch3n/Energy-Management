@@ -12,5 +12,5 @@ Scenario: User sends an alert to the administrator after seeing an energy use an
   Then I should be on "/halls/1"
   When I follow "Alert Us"
   Then I should see "Alert us if you see an abnormal trend in energy use."
-  When I press "OK"
-  Then I should see "An alert has been sent to the administrator"
+  When I follow "OK"
+  Then I should see "An alert has been sent"
