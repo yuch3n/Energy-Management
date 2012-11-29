@@ -4,6 +4,12 @@
   <%= label_tag :name, 'Name' %>
   <%= text_field(:hall, :name) %>
 
+  <%= label_tag :background, 'Description' %>
+  <%= text_area(:hall, :background, :size=>"30x10") %>
+
+  <%= label_tag :energy_info, 'Energy Projects' %>
+  <%= text_area(:hall, :energy_info, :size=>"30x10") %>
+
   <%= label_tag :features, 'Features' %>
   <% @features.each do |feature| %>
     <label class="checkbox">
