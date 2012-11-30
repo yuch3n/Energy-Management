@@ -37,9 +37,16 @@ class Hall < ActiveRecord::Base
  def getquery(starttime, endtime)
     streamlimit = 1000
 
-    if(self.name == "Davis Hall" || self.name == "Giannini Hall" || self.name == "Haviland Hall" || self.name == "Stanley Hall" || self.name == "Sproul Hall" || self.name == "Wellman Hall")
+    if(self.name == "Davis Hall" || self.name == "SRB1" || self.name == "Giannini Hall" || self.name == "Haviland Hall" || self.name == "Sproul Hall" || self.name == "Wellman Hall")
      "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where Properties/UnitofMeasure = 'kW'
 								 	   and Metadata/Location/Building = '#{self.name}' 
+									   and not Metadata/Extra/Operator like 'sum%'"
+    elsif(self.name == "Stanley Hall")
+     "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where Properties/UnitofMeasure = 'kW'
+								 	   and Metadata/Location/Building = '#{self.name}' 
+									   and (Metadata/Extra/MeterName = 'MAIN 1' or
+										Metadata/Extra/MeterName = 'MAIN 2' or
+										Metadata/Extra/MeterName = 'MAIN 3')
 									   and not Metadata/Extra/Operator like 'sum%'"
     else
     "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where (Metadata/Extra/ChannelName = 'kW demand' or 
@@ -59,9 +66,10 @@ class Hall < ActiveRecord::Base
                                                                                  Metadata/Extra/ChannelName = 'Wurster Main Electric Instantaneous' or
 										 Metadata/Extra/ChannelName = 'Electric MB01 Demand' or
 								    	         Metadata/Extra/ChannelName = 'Electric MB02 Demand' or
+										 uuid = '5ecfcd76-25ca-57d3-8a39-23b453a17b7e' or
+								    	         uuid = 'bc3a93bc-9bdd-5c59-aa6e-63f7060b9d58' or
                                                                                  uuid = '22109bd7-06d9-58a0-902f-2a5ed92f92e1' or
                                                                                  uuid = 'bc3a93bc-9bdd-5c59-aa6e-63f7060b9d58' or
-                                                                                 uuid = '0545cbe9-26b4-5fb8-983b-cfe336b7b8af' or
                                                                                  uuid = 'f9e52e06-697a-57af-9566-d05fabb001a4' or
                                                                                  uuid = '19edb822-eccb-5289-8fee-a39cdda66cd5' or
                                                                                  uuid = '1bf52ff9-2034-5fef-91b0-8b6cc7855f00')

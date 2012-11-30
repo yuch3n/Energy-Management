@@ -41,7 +41,7 @@
               <h3>Background</h3>
 	      <p><%=raw @hall.background %></p>
 	   </li>
-	   <% if @hall.energy_info != nil%>
+	   <% if @hall.energy_info != nil && @hall.energy_info != ""%>
        	    <li>
 	      <h3>Energy Projects</h3>
 	      <p><%=raw @hall.energy_info %></p>
