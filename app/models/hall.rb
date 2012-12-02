@@ -1,6 +1,7 @@
 require 'net/http'
 require 'rubygems'
 require 'json'
+require 'gmaps4rails'
 
 class Time
   def to_ms
@@ -9,6 +10,8 @@ class Time
 end
 
 class Hall < ActiveRecord::Base
+  acts_as_gmappable
+
   has_many :hall_features
   has_many :green_features, :through => :hall_features
   has_many :settings, :through => :pinned_halls
@@ -79,6 +82,10 @@ class Hall < ActiveRecord::Base
 
 
  end
+
+  def gmaps4rails_address
+    "#{self.name}, CA, Berkeley" 
+  end
 
   def getendtime interval
     if interval == "day"

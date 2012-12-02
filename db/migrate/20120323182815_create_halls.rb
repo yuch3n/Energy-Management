@@ -4,6 +4,9 @@ class CreateHalls < ActiveRecord::Migration
       t.string 'name'
       t.text 'background'
       t.text 'energy_info'
+      t.float 'latitude'
+      t.float 'longitude'
+      t.boolean 'gmaps'
       t.timestamps
     end
   end

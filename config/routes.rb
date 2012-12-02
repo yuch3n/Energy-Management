@@ -2,11 +2,12 @@ EnegeryManagement::Application.routes.draw do
 
   devise_for :admins, :controllers => { :registrations => "registrations", :sessions => "sessions" }    
 
-  resources :halls, :only => [:index, :show]
+  resources :halls, :only => [:index, :show, :map]
 
   resources :admin, :only => [:index]
   resources :tips, :only => [:index]
   resources :calculator, :only => [:index]
+  match 'map', :controller => 'halls', :action => 'map'
   match 'feedback/submit_form', :controller => 'feedback', :action => 'submit_form'
   match 'feedback/emailer/submit_feedback', :controller => 'emailer', :action => 'submit_feedback'
   match 'emailer/submit_flag/:id', :controller => 'emailer', :action => 'submit_flag'

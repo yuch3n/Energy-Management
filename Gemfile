@@ -28,6 +28,10 @@ gem 'jquery-rails'
 gem 'devise'
 
 group :assets, :development do
-  gem 'therubyracer'
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
+  gem 'gmaps4rails'
 end
+
+gem 'therubyracer' 

@@ -46,5 +46,9 @@ class HallsController < ApplicationController
     @data = {"Readings" => finalData}.to_json
 
   end
+
+  def map
+     @json = Hall.all.to_gmaps4rails
+  end
 end
 
