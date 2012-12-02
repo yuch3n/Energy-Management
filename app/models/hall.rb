@@ -10,7 +10,7 @@ class Time
 end
 
 class Hall < ActiveRecord::Base
-  acts_as_gmappable
+  acts_as_gmappable, :process_geocoding => false
 
   has_many :hall_features
   has_many :green_features, :through => :hall_features
