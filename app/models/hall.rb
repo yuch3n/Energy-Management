@@ -94,8 +94,6 @@ class Hall < ActiveRecord::Base
     else
       "#{self.name}, Berkeley, CA" 
     end
-   
-    sleep 1
   end
 
   def gmaps4rails_title
