@@ -21,6 +21,7 @@ group :development, :test do
 end
 
 group :production do
+  gem 'gmaps4rails'
   gem 'pg'
 end
 
