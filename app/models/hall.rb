@@ -1,7 +1,7 @@
 require 'net/http'
 require 'rubygems'
 require 'json'
-require 'gmaps4rails'
+
 
 class Time
   def to_ms
