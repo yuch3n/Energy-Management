@@ -130,7 +130,7 @@ Hilde.green_features = [strategic, power, climate]
 Hilgrad = Hall.create(:name=>"Hilgard Hall", :background=>"Designed by John Galen Howard, this was one of the first campus buildings to acknowledge the City of Berkeley (by attempting to face both inward and outward at the same time). The building houses Environmental Science, Policy & Management. Named for Eugene Hilgard, an agriculture professor who founded the University Agricultural Experimental station, it was added to the National Register of Historic Places in 1982.")
 Hilgrad.green_features = [strategic, power, climate]
 
-King = Hall.create(:name=>"King Union Bldg")
+King = Hall.create(:name=>"King Union Bldg", :background=>"The MLK Student Union is home to the Cal Student Store, Pauley Ballroom, a multicultural center, study lounges, meetings rooms, and restaurants. The building often hosts Career Fairs, conferences, and other public gatherings. In 2002, following the California Energy Crisis and soaring power costs, students funded the installation of solar panels on the roof. It is the only building on campus to date to have solar panels installed.")
 # Hall.create(:name=>"Kleeburger")
 Kosh = Hall.create(:name=>"Koshland", :background=>"Koshland is a research laboratory building and home to the Departments of Plant and Microbial Biology and Molecular and Cell Biology. Built in 1990, Koshland is named for Daniel Koshland, a Berkeley alumnus and Biochemistry Professor.")
 Kosh.green_features = [power, strategic, climate]
@@ -268,7 +268,9 @@ Wheel.green_features = [power, strategic, climate]
 #Hall.create(:name=>"Women Fac Clb")
 Wurst = Hall.create(:name=>"Wurster Hall", :background=>"Wurster Hall, built in 1964, was designed by three Berkeley architecture faculty — Joseph Esherick, Vernon DeMars, and Donald Olsen. Wurster is home to the College of Environmental Design, the Center of Environmental   Design Research, and the Institute for Urban and Regional Development. Wurster is named for William Wilson Wurster, a distinguished architect and first Dean of the college, and his wife, Catherine Bauer Wurster, a Professor of City and Regional Planning and leader in the field of public housing.")
 Wurst.green_features = [green_buildings, strategic, power, climate]
-#Hall.create(:name=>"Zellerbach Hall")
+
+Zellerbach = Hall.create(:name=>"Zellerbach Hall", :background=>"Zellerbach is the primary fine arts performance space on campus and home to Cal Performances and the Department of Theater, Dace and Performance Studies. The 2,100-seat main auditorium hosts performances by many of the world's most acclaimed orchestras, vocalists, dance companies, and speakers. A second 500-seat Playhouse hosts smaller productions. It is named for Isadore and Jennie Zellerbach, who were main contributors to its construction.")
+Zellerbach.green_features = [strategic, power, climate]
 
 
 
