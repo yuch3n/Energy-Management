@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
-
-
   # Create green features
 power =  GreenFeature.create(:id =>1, :name => "power-agents", :full_name => "Power Agents", :content => "A Power Agent is a UC Berkeley campus volunteer committed to helping colleagues reduce energy usage in campus buildings. Power Agents work within their units to encourage behavior change, decrease energy usage, and identify potential energy-saving projects.  Power Agents receive training, resources, and a toolkit to better assist energy reduction on campus.   For more information visit: http://mypower.berkeley.edu/about/power_agents.html")
 
@@ -45,8 +42,6 @@ Cali_Hall.green_features = [green_departments, power, climate]
 Chavez_Center = Hall.create(:name=>"Chavez Center", :background=>"This campus hot spot for students was once a dining commons and lounge and later renovated in 1990 to house various student services, including student advising, resources and services, Center for Transfer, Re-entry & Student Parents, student arts organizations, and The Golden Bear Café. Built in 1960, it is named in honor of Cesar Chavez, the charismatic founding president of the farm workers’ union.")
 Chavez_Center.green_features = [power, climate]
 
-sleep 2
-
 Cory_Hall = Hall.create(:name=>"Cory Hall", :background=>"Cory Hall is home to Electrical Engineering and Computer Sciences. The building houses labs devoted to integrated circuits, lasers, and robotics. Cory had a fifth floor added in 1985, the exterior of which features a computer chip inspired design motif.  It is named for Clarence L. Cory, Dean of the College of Mechanics and a faculty member for almost 40 years.")
 Cory_Hall.green_features = [power, strategic, climate]
 
@@ -71,8 +66,6 @@ Dwinelle.green_features = [power, strategic, climate]
 
 East = Hall.create(:name=>"East Asian Library", :background=>"Berkeley’s vast collection of East Asian manuscripts and artifacts—assembled over the past century—is housed in this library, the first freestanding structure at a U.S. university erected solely for East Asian collections. The library is home to more than 900,000 volumes, primarily in Chinese, Japanese, and Korean, plus thousands of manuscripts, rubbings, and the largest and most valuable collection of historic Japanese maps outside of Japan. It was built in 2008 and is named for the late Cornerlius Vander Starr, an insurance pioneer with a deep interest in Asia and a major donor to the building fund for the library.")
 East.green_features = [power, climate]
-
-sleep 2
 
 # Hall.create(:name=>"Edwards Track")
 # Hall.create(:name=>"Eshleman Hall")
@@ -119,8 +112,6 @@ Hargrove.green_features = [power, climate]
 Haviland = Hall.create(:name=>"Haviland Hall", :background=>"Haviland Hall is home to the Schools of Social Welfare and Public Health. The building was designed by John Galen Howard and named in honor of San Francisco banker J.T.H. Haviland, whose wife donated the funds for the building. It was added to the National Register of Historic Places in 1982.")
 Haviland.green_features = [power, climate]
 
-sleep 2
-
 # Hall.create(:name=>"Hearst Annex")
 Hearst = Hall.create(:name=>"Hearst Gym", :background=>"Designed by celebrated local architects Bernard Maybeck and Julia Morgan, Hearst Memorial Gym has large and small gymnasiums and outdoor swimming pools. The building is home to the Department of Physical Education and ROTC. It was added to the National Register of Historic Places in 1982.")
 Hearst.green_features = [power, climate]
@@ -155,8 +146,6 @@ Latimer.green_features = [power, strategic, climate]
 # Hall.create(:name=>"LBL")
 # Hall.create(:name=>"Leconte Hall")
 
-sleep 2
-
 LeCunt = Hall.create(:name=>"Le Conte Hall", :background=>"Le Conte Hall is a five-story building housing the Physics Department. The eastern portion is the original Le Conte and today referred to as “Old Le Conte”. The western portion is known as “Le Conte Annex”. The world's first atom smasher was built in Le Conte Hall and to date, six Nobel laureates have had labs in the building.  The building was designed by John Galen Howard in the Beaux Arts style, and is dedicated to John Lawrence LeConte, the third President of the University and professor of Physics.", :energy_info=>"In the spring of 2008 BSAC performed a lighting audit in LeConte Hall’s public areas. Following the audit, 17 fixtures were retrofitted 700+ more fixtures were identified for retrofitting. The auditors also recommend stickers reminding people to turn off lights, occupancy sensors, bi-level lighting, and an overall reduction in the number of lamps used. <br> <br>
 During the same semester these students hosted educational workshops focused on distributing environmental newsletters and informing occupants about phantom loads. Some additional suggestions include encouraging people to do is to take the stairs when possible and share office appliances (like printers) when possible.")
 LeCunt.green_features = [strategic, power, climate]
@@ -188,8 +177,6 @@ Morgan.green_features = [strategic, green_buildings, power, climate]
 # Hall.create(:name=>"Moses")
 Mulford = Hall.create(:name=>"Mulford Hall", :background=>"Mulford Hall is home to the Department of Environmental Science, Policy and Management. A unique building characteristic is that much of the interior is wood-paneled or covered by planks of various tree species, including California natives and foreign species. It is named for Water Mulford, first Dean of the School of Forestry from 1914-47.")
 Mulford.green_features = [green_departments, power, climate]
-
-sleep 2
 
 Oxford = Hall.create(:name=>"Oxford Tract", :background=>"Adjacent to Warren Hall, Oxford Tract is a research complex for the Department of Plant and Microbial Biology. The complex consists of greenhouses, gardens, and research laboratories.")
 Oxford.green_features = [power, climate]
@@ -250,8 +237,6 @@ St.green_features = [power, climate]
 Tang = Hall.create(:name=>"Tang Center", :background=>"The Tang Center is home to the University Health Services, which provides services such as acute care, radiology, a pharmacy, optometry clinic, and counseling. A major gift from Hong Kong businessman Jack C.C. Tang, whose two daughters graduated from Berkeley, helped fund this center for student health care.")
 Tang.green_features = [power, green_departments, strategic, climate]
 
-sleep 2
-
 Tan = Hall.create(:name=>"Tan Hall", :background=>"Tan Hall is an 118,000 square foot research facility for the College  of Chemistry. The building contains research and teaching laboratories, a lecture hall, staff offices, and a seminar room for students and faculty. It is named in honor of Tan Kah Kee, a pioneering industrialist and philanthropist in China and Singapore.")
 Tan.green_features = [power, climate]
 
@@ -276,8 +261,6 @@ VL.green_features = [strategic, power, climate]
 #Hall.create(:name=>"Wellman Ctyd")
 Wellman = Hall.create(:name=>"Wellman Hall", :background=>"Housing Environmental Science, Policy & Management and the Essig Museum of Entomology Wellman Hall is part of the trio of buildings that were the core of agricultural studies. Its original name was Agriculture Hall but was renamed for Harry Wellman, Professor of Agricultural Economics and acting University President in 1967. Designed by John Galen Howard in the Beaux Arts style, it was added to the National Register of Historic Places in 1982.")
 Wellman.green_features = [power, climate]
-
-sleep 2
 
 Wheel = Hall.create(:name=>"Wheeler Hall", :background=>"Wheeler Hall is home classrooms and to Wheeler Auditorium - one of the largest on campus, often used as a lecture hall for  undergraduate classes. The building is named for Benjamin Ide Wheeler, the University President during Berkeley’s “golden years” from 1899-1919. It was added to the National Register of Historic Places in 1982.")
 Wheel.green_features = [power, strategic, climate]
