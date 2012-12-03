@@ -32,7 +32,7 @@
 
     <div data-role="content">
        <%= stylesheet_link_tag "gmaps4rails" %>
-       <%= gmaps4rails(@json) %>
+       <center><%= gmaps4rails(@json) %></center>
     </div>
 
 <script type="text/javascript" src="//maps.google.com/maps/api/js?v=3.5&sensor=false&amp;libraries=geometry"></script>
@@ -56,9 +56,7 @@ window.onload = function() { Gmaps.loadMaps(); };
 
 </script>
 
-     
     </div>
-
 </div>
 
 <style type="text/css">
@@ -66,9 +64,6 @@ window.onload = function() { Gmaps.loadMaps(); };
 
   /* Override default jQuery Mobile styling */
   .ui-icon { height: 30px !important; width: 30px !important; margin-left: -15px !important; box-shadow: none !important; border-radius: 0 !important; }
-  .ui-icon-graph { background: url('/assets/graph.png') no-repeat 0px 0px !important; background-size: 100% auto !important; }
-  .ui-icon-feature { background: url('/assets/green_feature.png') no-repeat 0px 0px !important; background-size: 60% auto !important; }
-  #green-features .ui-li-desc { overflow: visible; white-space: normal; }
 
   .localnav { margin-top: 15px; }
   .localnav li { float: left; }
@@ -76,13 +71,7 @@ window.onload = function() { Gmaps.loadMaps(); };
   #content { padding: 25px; }
   .content-page { margin: 0 auto; }
 
-  #graphContainer { overflow: hidden}
-  #intervalControls { width: 315px; height: 45px; text-align:center; margin: 0 auto;}
-  #intervalControls ul { margin: 5px auto; width: 266px; }
-
   .success{
-    margin-left: -9px;
-    margin-top: -9px;
     z-index: 1001;
     position:absolute;
   }
