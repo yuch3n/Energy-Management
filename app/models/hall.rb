@@ -11,12 +11,12 @@ end
 
 class Hall < ActiveRecord::Base
 
-  acts_as_gmappable :process_geocoding => false;
-
   has_many :hall_features
   has_many :green_features, :through => :hall_features
   has_many :settings, :through => :pinned_halls
   belongs_to :operational_unit
+
+  acts_as_gmappable
 
   def get_graph (width = 700, height = 300, interval = 'week')
     if self.key
