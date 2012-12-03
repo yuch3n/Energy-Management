@@ -1,7 +1,7 @@
 require 'net/http'
 require 'rubygems'
 require 'json'
-
+require 'gmaps4rails'
 
 class Time
   def to_ms
@@ -17,7 +17,7 @@ class Hall < ActiveRecord::Base
   belongs_to :operational_unit
 
   acts_as_gmappable
-
+  
   def get_graph (width = 700, height = 300, interval = 'week')
     if self.key
       "http://my.pulseenergy.com/embed/?key=#{self.key}&width=#{width}&height=#{height}&interval=#{interval}"
