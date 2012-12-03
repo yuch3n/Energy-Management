@@ -85,7 +85,15 @@ class Hall < ActiveRecord::Base
  end
 
   def gmaps4rails_address
-    "#{self.name}, Berkeley, CA" 
+    if(self.name == "Tang Center")
+       "2222 Bancroft Way, Berkeley, CA"
+    elsif(self.name == "Le Conte Hall")
+       "LeConte Hall, S Hall Rd, Berkeley, CA"
+    elsif(self.name == "California Hall")
+       "California Hall, Sather Rd, Berkeley, CA"
+    else
+      "#{self.name}, Berkeley, CA" 
+    end
   end
 
   def gmaps4rails_title
