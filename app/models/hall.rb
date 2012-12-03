@@ -16,7 +16,7 @@ class Hall < ActiveRecord::Base
   has_many :settings, :through => :pinned_halls
   belongs_to :operational_unit
 
-  acts_as_gmappable
+  acts_as_gmappable 
   
   def get_graph (width = 700, height = 300, interval = 'week')
     if self.key
