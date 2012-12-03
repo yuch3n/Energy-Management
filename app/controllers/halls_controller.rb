@@ -14,6 +14,7 @@ class HallsController < ApplicationController
     @path = @hall.get_graph(300, 260, @interval)
     @green_features = @hall.green_features
     @data = @hall.get_data @interval
+    @json = Hall.all.to_gmaps4rails
 
     parsedData = JSON.parse(@data)
     arraySize = 10000

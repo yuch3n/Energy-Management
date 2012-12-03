@@ -10,7 +10,8 @@ class Time
 end
 
 class Hall < ActiveRecord::Base
-  acts_as_gmappable :process_geocoding => false
+
+  acts_as_gmappable 
 
   has_many :hall_features
   has_many :green_features, :through => :hall_features
@@ -85,6 +86,18 @@ class Hall < ActiveRecord::Base
 
   def gmaps4rails_address
     "#{self.name}, CA, Berkeley" 
+  end
+
+  def gmaps4rails_title
+      "#{self.name}"
+  end
+
+  def gmaps4rails_infowindow
+    "<strong><a href=\"http://mypower.herokuapp.com/halls/#{self.id}\"> #{self.name}</a></strong>
+     <br>
+     #{self.background}
+     <br>
+     <img src= \"/images/Art Museum.jpg\">"
   end
 
   def getendtime interval
