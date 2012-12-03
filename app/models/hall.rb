@@ -85,7 +85,7 @@ class Hall < ActiveRecord::Base
  end
 
   def gmaps4rails_address
-    "#{self.name}, CA, Berkeley" 
+    "#{self.name}, Berkeley, CA" 
   end
 
   def gmaps4rails_title
@@ -93,11 +93,9 @@ class Hall < ActiveRecord::Base
   end
 
   def gmaps4rails_infowindow
-    "<center><strong><a href=\"http://mypower.herokuapp.com/halls/#{self.id}\"> #{self.name}</a></strong>
+    "<center><a href=\"http://mypower.herokuapp.com/halls/#{self.id}\"> #{self.name}</a>
      <br>
-     <br>
-     <a href=\"http://mypower.herokuapp.com/halls/#{self.id}\"><img src= \"/buildings/#{self.name}.jpg\"></a></center>
-     #{self.background}"
+     <a href=\"http://mypower.herokuapp.com/halls/#{self.id}\"><img src= \"/smallbuildings/#{self.name}.jpg\"></a></center>"
   end
 
   def getendtime interval
