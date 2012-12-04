@@ -143,6 +143,9 @@ Latimer.green_features = [power, strategic, climate]
 
 # Hall.create(:name=>"LAW")
 
+LHS = Hall.create(:name=>"Lawrence Hall of Science", :background=>"Lawrence Hall of Science is a resource center for preschool through high school science and mathematics education, and a public science center with hands-on experiences for learners of all ages. It is named in honor of Ernest O. Lawrence, UC’s first Nobel Laureate.")
+LHS.green_features = [power, climate]
+
 # Hall.create(:name=>"LBL")
 # Hall.create(:name=>"Leconte Hall")
 
