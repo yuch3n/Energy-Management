@@ -101,9 +101,10 @@ class Hall < ActiveRecord::Base
   end
 
   def gmaps4rails_infowindow
-    "<center><a href=\"/halls/#{self.id}\" target=\"_parent\"> #{self.name}</a>
+    "<center><font face=\"<font size=\"7\" face=\"fantasy\" color=\"#154C99\">#{self.name}</font>
      <br>
-     <a href=\"/halls/#{self.id}\" target=\"_parent\"><img src= \"/smallbuildings/#{self.name}.jpg\"></a></center>"
+     <div><b><font face =\"Arial\" size=\"1.5\"><a href=\"/halls/#{self.id}\" target=\"_parent\" style=\"text-decoration: none\"> Energy Info </a><?font><b></div>
+     <div><a href=\"/halls/#{self.id}\" target=\"_parent\"><img src= \"/smallbuildings/#{self.name}.jpg\"></a></center></div>"
   end
 
   def getendtime interval
