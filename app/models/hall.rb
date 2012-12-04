@@ -41,7 +41,11 @@ class Hall < ActiveRecord::Base
  def getquery(starttime, endtime)
     streamlimit = 1000
 
-    if(self.name == "Zellerbach Hall" || self.name == "Davis Hall" || self.name == "SRB1" || self.name == "Giannini Hall" || self.name == "Haviland Hall" || self.name == "Sproul Hall" || self.name == "Wellman Hall")
+    if(self.name == "Soda Hall")
+      "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where Properties/UnitofMeasure = 'kW'
+								 	   and Metadata/Location/Building = 'Soda Hall New (as of 1/12/12)' 
+									   and not Metadata/Extra/Operator like 'sum%'"
+    elsif(self.name == "Zellerbach Hall" || self.name == "Davis Hall" || self.name == "SRB1" || self.name == "Giannini Hall" || self.name == "Haviland Hall" || self.name == "Sproul Hall" || self.name == "Wellman Hall")
      "select data in (#{starttime}, #{endtime}) streamlimit #{streamlimit} where Properties/UnitofMeasure = 'kW'
 								 	   and Metadata/Location/Building = '#{self.name}' 
 									   and not Metadata/Extra/Operator like 'sum%'"
