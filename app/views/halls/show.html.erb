@@ -15,7 +15,10 @@
 <div class="contentPage" id="graphContent" data-role="page">
     <!-- Begin header -->
     <div data-role="header" class="ui-bar-b" data-position="fixed">
-      <a href="/halls" data-theme="a" data-ajax="false">Back</a>
+     <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+          <a href="/halls" data-theme="a" data-role="button" data-ajax="false">Building List</a>
+          <a href="/map" target="_parent" data-theme="a" data-role="button" data-ajax="false">Map View</a>
+      </div>
       <a href="#alertus" id="alertBtn" class="ui-btn-right" data-role="tab">&nbsp;Alert Us&nbsp;</a>
       <h1><%= @hall.name %></h1>
     </div>
@@ -66,7 +69,10 @@
 <div class="contentPage" id="featureContent" data-role="page">
     <!-- Begin header -->
     <div data-role="header" class="ui-bar-b" data-position="fixed">
-      <a href="/halls" data-theme="a" data-ajax="false">Back</a>
+      <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+          <a href="/halls" data-theme="a" data-role="button" data-ajax="false">Building List</a>
+          <a href="/map" target="_parent" data-role="button" data-theme="a" data-ajax="false">Map View</a>
+      </div>
       <h1><%= @hall.name %></h1>
     </div>
     <!-- End header -->
