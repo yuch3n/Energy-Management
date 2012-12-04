@@ -101,9 +101,9 @@ class Hall < ActiveRecord::Base
   end
 
   def gmaps4rails_infowindow
-    "<center><a href=\"http://mypower.herokuapp.com/halls/#{self.id}\"> #{self.name}</a>
+    "<center><a href=\"/halls/#{self.id}\" target=\"_parent\"> #{self.name}</a>
      <br>
-     <a href=\"http://mypower.herokuapp.com/halls/#{self.id}\"><img src= \"/smallbuildings/#{self.name}.jpg\"></a></center>"
+     <a href=\"/halls/#{self.id}\" target=\"_parent\"><img src= \"/smallbuildings/#{self.name}.jpg\"></a></center>"
   end
 
   def getendtime interval
