@@ -13,7 +13,7 @@ group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
-  gem 'capybara'
+  gem 'capybara', '< 1.9'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'selenium-webdriver', '>= 2.5.0'

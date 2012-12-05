@@ -16,5 +16,5 @@ Scenario: Going to the show page and back
 	  Then I should be on "/halls/1"
 
 	  When I follow "Day"
-	  And I follow "Back" within "#graphContent"
+	  And I follow "List" within "#graphContent"
 	  Then I should be on "/halls"
