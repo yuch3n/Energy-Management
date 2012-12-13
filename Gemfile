@@ -33,8 +33,7 @@ group :assets, :development do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'gmaps4rails'
-  gem 'geokit'
-  gem 'geokit-rails31'
+  gem 'therubyracer' 
 end
 
-gem 'therubyracer' 
+
