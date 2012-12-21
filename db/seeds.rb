@@ -330,8 +330,8 @@ Introduction.create(:title=>"How is it used?", :content=>"The dashboard lets you
 Introduction.create(:title=>"How does it work?", :content=>"A hardware connector in each facility communicates with the building's energy metering system and sends the data to software engine. The software tracks the exact amount of energy being consumed at any given moment, analyzes it, and communicates it to you in real-time via this dashboard. In an effort to reduce greenhouse gas emissions and save money on operations, occupants are being given access to this innovative software tool powered by LoCal and Pulse Energy. 
 <br>
 <br>
-Utilizing LoCal's sMAP project which aims to make physical data more accessible and useable, this application is able to obtain the energy usage information of each building on the UC Berkeley campus.
-Due to their oustanding work, LoCal received a grant (CPS-0932209) from the National Science Foundation which helps fund their research.
+Utilizing LoCal's sMAP project which aims to make physical data more accessible and useable, this application is able to obtain the energy usage information of each building on the UC Berkeley campus. <br>
+LoCal recieved the NSF grant(CPS-0932209) which helps fund their research. <br>
 Check out the sMAP project at http://code.google.com/p/smap-data/
 <br>
 <br>
